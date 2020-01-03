@@ -1,7 +1,9 @@
 # Miguel's neovim distribution (alpha)
 Nvim configuration with sensible defaults
 
-Main source of inspiration / copy is [Luan's nvim distribution](https://github.com/luan/nvim) as it was my first contact with a usable and pleasurable vim distro. I highly recommend you give it a try, as it leverages Luan's deep knowledge of (neo)vim and efficient workflows.
+Main source of inspiration / copy is [Luan's nvim distribution](https://github.com/luan/nvim)
+as it was my first contact with a usable and pleasurable vim distro. I highly recommend you
+give it a try, as it leverages Luan's deep knowledge of (neo)vim and efficient workflows.
 
 ## Installation
 
@@ -43,3 +45,45 @@ the following is true:
 
 `:ConfigUpdate` updates the local config and you can also `:ConfigUpdate!` to
 update *and* force run the post-update hooks.
+
+## Customizing
+
+In the distribution directory there's `user` directory that's git ignored,
+`$XDG_CONFIG_HOME/nvim/user`, it will be created on first start based on the
+`user.defaults` on in this repo. The three hooks are:
+
+* `user/before.vim`: Runs before everything, useful to set globals that change
+  plugin behavior
+* `user/plug.vim`: Runs during plugin setup, you can add your own choices of
+  plugins here. More on adding plugins
+  [here](https://github.com/junegunn/vim-plug)
+* `user/after.vim`: Runs at the end, useful to override and map your own key
+  bindings and configure your custom plugins. This is also where you'd change
+  the colorscheme
+
+It is recommended that you track your user settings on a separate repo and
+symlink them in here, see [my dotfiles
+repo](https://github.com/miguelverissimo/dotfiles/tree/master/nvim) for
+an example.
+
+### Options
+
+  - `g:autosave`: add a `let g:autosave = 1` to your `user/before.vim` to enable
+    autosaving.
+
+## Troubleshooting
+
+In the even things behave incorrectly or the config becomes unstable in general,
+regular vim debugging methods apply. Check `:checkhealth` for clues on what's
+wrong with your setup.
+
+Make sure language servers are installed for your language;
+`:ConfigInstallLanguageServers` installs a few that aren't automatically managed
+by other plugins (this should have happened automatically but it is sometimes good
+to make sure it runs successfully).
+
+Sometimes plugin authors make backwards incompatible changes or push changes in
+ways that confuse [vim-plug](https://github.com/junegunn/vim-plug). A simple way
+to reset your plugin installation and start over is to remove them from the
+load path in `~/.local/share/nvim/plugged` which can be run with
+`:ConfigResetAllPluginsReallyDoIt!`.
