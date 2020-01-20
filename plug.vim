@@ -9,7 +9,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'chriskempson/base16-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'kadekillary/Turtles'
-Plug 'miguelverissimo/vim-color-elixizi'
+Plug 'miguelverissimo/tendinitis'
 Plug 'Rigellute/rigel'
 Plug 'tjammer/blayu.vim'
 Plug 'flrnd/candid.vim'

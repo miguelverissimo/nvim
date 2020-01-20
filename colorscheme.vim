@@ -1,6 +1,7 @@
 if !exists('g:colors_name')
-  let g:lightline.colorscheme = 'Tomorrow_Night_Eighties'
+  syntax enable
+  let g:lightline.colorscheme = 'tendinitis'
   let g:airline_theme = 'elixizi'
   set background=dark
-  colorscheme elixizi
+  colorscheme elixizy
 endif
