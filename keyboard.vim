@@ -155,7 +155,8 @@ nmap <silent> <leader>lf <Plug>(coc-fix-current)
 nmap <silent> <leader>ld <Plug>(coc-definition)
 nmap <silent> <leader>ly <Plug>(coc-type-definition)
 
-nnoremap <silent> <c-p> :FZFFiles<CR>
+nnoremap <silent> <C-p> :FZFFiles<CR>
+nnoremap <silent> <c-p> :Clap files<CR>
 
 nnoremap <leader>nn :NERDTreeToggle<CR>
 nnoremap \ :NERDTreeToggle<CR>
