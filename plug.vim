@@ -279,6 +279,8 @@ Plug 'kurayama/systemd-vim-syntax'
 Plug 'peterhoeg/vim-qml'
 Plug 'uarun/vim-protobuf'
 Plug 'junegunn/vader.vim'
+Plug 'slim-template/vim-slim'
+Plug 'tpope/vim-haml'
 " }
 
 " Text objects {
