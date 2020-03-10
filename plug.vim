@@ -316,6 +316,10 @@ Plug 'kana/vim-textobj-fold'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 " }
 
+" keep track of coding work {
+Plug 'wakatime/vim-wakatime'
+" }
+
 
 " Load user plugins
 runtime! user/plug.vim
