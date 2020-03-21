@@ -316,6 +316,9 @@ Plug 'kana/vim-textobj-fold'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 " }
 
+" k8s {
+Plug 'andrewstuart/vim-kubernetes'
+" }
 
 " Load user plugins
 runtime! user/plug.vim
