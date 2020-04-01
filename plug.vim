@@ -320,6 +320,10 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'andrewstuart/vim-kubernetes'
 " }
 
+" VimWiki: A Personal Wiki For Vim {
+Plug 'vimwiki/vimwiki'
+" }
+
 " Load user plugins
 runtime! user/plug.vim
 
