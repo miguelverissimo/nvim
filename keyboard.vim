@@ -143,6 +143,9 @@ let g:lmap.l.s =  [':Vista finder coc',                 'Symbols']
 let g:lmap.l.t =  [':Vista coc',                        'Tag Bar']
 let g:lmap.l.ct = [':Vista!',                           'Close Tag Bar']
 
+let g:lmap.n = { 'name': 'NERDTree' }
+let g:lmap.w = { 'name': 'VimWiki' }
+
 nmap <silent> <leader>la <Plug>(coc-codeaction)
 vmap <silent> <leader>la <Plug>(coc-codeaction-selected)
 
