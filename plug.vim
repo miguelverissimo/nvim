@@ -232,10 +232,10 @@ Plug 'othree/yajs.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'ternjs/tern_for_vim', {'do': 'npm install'}
-Plug 'mxw/vim-jsx'
 " }
 
 " JSX {
+Plug 'mxw/vim-jsx'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 " }
 
