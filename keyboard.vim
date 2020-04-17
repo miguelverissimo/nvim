@@ -159,7 +159,7 @@ nmap <silent> <leader>ld <Plug>(coc-definition)
 nmap <silent> <leader>ly <Plug>(coc-type-definition)
 
 nnoremap <silent> <C-p> :FZFFiles<CR>
-nnoremap <silent> <c-p> :Clap files<CR>
+nnoremap <silent> <c-p> :Clap files --hidden<CR>
 
 nnoremap <leader>nn :NERDTreeToggle<CR>
 nnoremap \ :NERDTreeToggle<CR>
