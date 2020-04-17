@@ -324,6 +324,10 @@ Plug 'andrewstuart/vim-kubernetes'
 Plug 'vimwiki/vimwiki'
 " }
 
+" EditorConfig support
+Plug 'editorconfig/editorconfig-vim'
+" }
+
 " Load user plugins
 runtime! user/plug.vim
 
