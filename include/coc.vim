@@ -14,6 +14,7 @@ let g:coc_global_extensions = [
       \   'coc-solargraph',
       \   'coc-tsserver',
       \   'coc-yaml',
+      \   'coc-eslint',
       \ ]
 
 autocmd CursorHold * silent call CocActionAsync('highlight')

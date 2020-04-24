@@ -228,7 +228,7 @@ Plug 'shime/vim-livedown', { 'for': 'markdown' }
 " }
 
 " JavaScript {
-Plug 'yuezk/vim-js'
+Plug 'pangloss/vim-javascript'
 " }
 
 " JSX {
