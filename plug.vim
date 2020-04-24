@@ -229,10 +229,11 @@ Plug 'shime/vim-livedown', { 'for': 'markdown' }
 
 " JavaScript {
 Plug 'pangloss/vim-javascript'
+" post install (yarn install | npm install) then load plugin only for editing supported files
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " }
 
 " JSX {
-Plug 'maxmellon/vim-jsx-pretty'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 " }
 
