@@ -228,14 +228,11 @@ Plug 'shime/vim-livedown', { 'for': 'markdown' }
 " }
 
 " JavaScript {
-Plug 'othree/yajs.vim'
-Plug 'othree/es.next.syntax.vim'
-Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'ternjs/tern_for_vim', {'do': 'npm install'}
+Plug 'yuezk/vim-js'
 " }
 
 " JSX {
-Plug 'mxw/vim-jsx'
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 " }
 
