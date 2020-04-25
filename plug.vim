@@ -227,10 +227,6 @@ Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'shime/vim-livedown', { 'for': 'markdown' }
 " }
 
-" External syntax checker {
-Plug 'vim-syntastic/syntastic' " has config file in include dir
-" }
-
 " JavaScript {
 Plug 'pangloss/vim-javascript'
 " post install (yarn install | npm install) then load plugin only for editing supported files
