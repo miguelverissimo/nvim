@@ -189,3 +189,6 @@ vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
 
+""" Quicker splits
+nnoremap <silent> <leader>vv :vsplit<cr>
+nnoremap <silent> <leader>hh :split<cr>
