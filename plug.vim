@@ -8,12 +8,12 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Color schemes {
 Plug 'chriskempson/base16-vim'
 Plug 'joshdick/onedark.vim'
-Plug 'kadekillary/Turtles'
 Plug 'miguelverissimo/tendinitis'
 Plug 'Rigellute/rigel'
 Plug 'tjammer/blayu.vim'
 Plug 'flrnd/candid.vim'
 " }
+
 " NERDTree {
 Plug 'scrooloose/nerdtree'
 " }
@@ -229,8 +229,6 @@ Plug 'shime/vim-livedown', { 'for': 'markdown' }
 
 " JavaScript {
 Plug 'pangloss/vim-javascript'
-" post install (yarn install | npm install) then load plugin only for editing supported files
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " }
 
 " JSX {
@@ -279,6 +277,7 @@ Plug 'uarun/vim-protobuf'
 Plug 'junegunn/vader.vim'
 Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-haml'
+Plug 'andrewstuart/vim-kubernetes'
 " }
 
 " Text objects {
@@ -312,10 +311,6 @@ Plug 'kana/vim-textobj-fold'
 
 " relative line numbers only on focused buffer {
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
-" }
-
-" k8s {
-Plug 'andrewstuart/vim-kubernetes'
 " }
 
 " VimWiki: A Personal Wiki For Vim {

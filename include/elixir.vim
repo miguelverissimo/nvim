@@ -8,12 +8,12 @@ let g:mix_format_on_save = 1
 " $ mix deps.get && mix compile
 " $ mix elixir_ls.release -o rel
 " $ ln -s $(pwd)/rel $HOME/elixir-ls
-let g:ale_elixir_elixir_ls_release = '$HOME/elixir-ls'
+" let g:ale_elixir_elixir_ls_release = '$HOME/elixir-ls'
 
-let g:ale_linters = {
-\   'elixir': ['elixir-ls'],
-\}
+" let g:ale_linters = {
+" \   'elixir': ['elixir-ls'],
+" \}
 
-let g:ale_fixers = {
-\  'elixir': ['mix_format'],
-\}
+" let g:ale_fixers = {
+" \  'elixir': ['mix_format'],
+" \}

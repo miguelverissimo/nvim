@@ -3,19 +3,19 @@ if !executable('yarn')
 endif
 
 let g:coc_global_extensions = [
-      \   'coc-css',
-      \   'coc-emmet',
-      \   'coc-highlight',
-      \   'coc-html',
-      \   'coc-json',
-      \   'coc-python',
-      \   'coc-rls',
-      \   'coc-snippets',
-      \   'coc-solargraph',
-      \   'coc-tsserver',
-      \   'coc-yaml',
-      \   'coc-eslint',
-      \ ]
+\   'coc-css',
+\   'coc-emmet',
+\   'coc-highlight',
+\   'coc-html',
+\   'coc-json',
+\   'coc-python',
+\   'coc-rls',
+\   'coc-snippets',
+\   'coc-solargraph',
+\   'coc-tsserver',
+\   'coc-yaml',
+\   'coc-eslint',
+\ ]
 
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
