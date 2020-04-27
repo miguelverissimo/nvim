@@ -232,6 +232,7 @@ Plug 'pangloss/vim-javascript'
 " }
 
 " JSX {
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 " }
 
