@@ -30,11 +30,14 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'kshenoy/vim-signature'
 " }
 
-" Lightweight status line {
+" Lightweight status line and friends {
 Plug 'itchyny/lightline.vim'
 
 " ALE indicator for the lightline vim plugin {
 Plug 'maximbaz/lightline-ale'
+
+Plug 'rmolin88/pomodoro.vim'
+Plug 'ryanoasis/vim-devicons'
 " }
 
 " Visual guide for keybindings {
@@ -129,8 +132,11 @@ Plug 'junegunn/goyo.vim'
 " All the world's indeed a stage and we are merely players
 Plug 'junegunn/limelight.vim'
 
-" interact with tmux
+" interact with tmux {
 Plug 'benmills/vimux'
+Plug 'keith/tmux.vim'
+Plug 'edkolev/tmuxline.vim'
+" }
 
 " asynchronous build and test dispatcher
 Plug 'tpope/vim-dispatch'
@@ -271,7 +277,6 @@ Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'chr4/nginx.vim'
 Plug 'dag/vim-fish'
 Plug 'hashivim/vim-terraform'
-Plug 'keith/tmux.vim'
 Plug 'kurayama/systemd-vim-syntax'
 Plug 'peterhoeg/vim-qml'
 Plug 'uarun/vim-protobuf'

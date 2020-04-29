@@ -1,21 +1,30 @@
 scriptencoding utf-8
 
 let g:lightline = {
+      \ 'inactive': {
+      \   'left': [['filename', 'fileformat', 'modified']],
+      \   'right': [['lineinfo', 'percent']],
+      \ },
       \ 'active': {
-      \   'left': [['mode', 'paste'], ['fugitive', 'filename']],
+      \   'left': [
+      \     ['mode', 'paste'],
+      \     ['fugitive', 'filename'],
+      \   ],
       \   'right': [
-      \     ['lineinfo'],
-      \     ['percent'],
-      \     ['linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok'],
-      \     ['config_outdated'],
+      \     ['lineinfo', 'percent'],
+      \     ['linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok', 'pomodoro'],
+      \     ['config_outdated', 'devicons_filetype'],
       \   ]
       \ },
       \ 'component': {
       \   'lineinfo': ' %3l:%-2v',
+      \   'pomodoro': '%{PomodoroStatus()}',
       \ },
       \ 'component_function': {
       \   'fugitive': 'LightlineFugitive',
       \   'filename': 'LightlineFilename',
+      \   'devicons_filetype': 'WebDevIconsGetFileTypeSymbol',
+      \   'devicons_fileformat': 'WebDevIconsGetFileFormatSymbol',
       \ },
       \ 'component_expand': {
       \   'linter_checking': 'lightline#ale#checking',
@@ -32,13 +41,28 @@ let g:lightline = {
       \   'linter_ok': 'left',
       \   'config_outdated': 'warning',
       \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' }
+      \ 'separator': { 'left': "", 'right': "" },
+      \ 'subseparator': { 'left': "", 'right': "" },
+      \ 'tabline_separator': { 'left': "", 'right': "" },
+      \ 'tabline_subseparator': { 'left': "", 'right': "" }
       \ }
+
+      " \ 'separator': { 'left': '', 'right': '' },
+      " \ 'subseparator': { 'left': '', 'right': '' }
+      " \ }
+
+function! PomodoroStatus() abort
+  if pomo#remaining_time() ==# '0'
+    return ""
+  else
+    return "".pomo#remaining_time()
+  endif
+endfunction
 
 function! LightlineModified()
   return &filetype =~# 'help\|vimfiler' ? '' : &modified ? '+' : &modifiable ? '' : '-'
 endfunction
+
 function! LightlineFilename()
   let l:fname = expand('%')
   return  l:fname ==# '__Tagbar__' ? g:lightline.fname :
@@ -47,9 +71,11 @@ function! LightlineFilename()
         \ ('' !=# l:fname ? l:fname : '[No Name]') .
         \ ('' !=# LightlineModified() ? ' ' . LightlineModified() : '')
 endfunction
+
 function! LightlineReadonly()
   return &readonly ? '' : ''
 endfunction
+
 function! LightlineFugitive()
   if exists('*fugitive#head')
     let l:branch = fugitive#head()
