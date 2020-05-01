@@ -1,5 +1,5 @@
-" Full redraw finxing syntax highlight bugs
-nnoremap <silent> <c-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
+" Full redraw fixing syntax highlight bugs
+nnoremap <silent> <M-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr>:redraw!<cr>
 
 " coc.nvim
 if executable('yarn')
@@ -27,9 +27,10 @@ xmap <c-_>  <Plug>Commentary
 omap <c-_>  <Plug>Commentary
 nmap <c-_>  <Plug>CommentaryLine
 
-" Mimic behavior from D, C
+" Y to copy till end of line
 nnoremap Y y$
 
+" Indent/dedent using tab/shift-tab or >/<
 vnoremap > >gv
 vnoremap < <gv
 
@@ -67,9 +68,6 @@ nmap ga <Plug>(LiveEasyAlign)
 " Leader is <Space>
 let g:mapleader=' '
 let g:maplocalleader = ','
-
-" Copy to system clipboard
-vnoremap Y "+y
 
 " Disable search highlight
 nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
@@ -192,3 +190,9 @@ imap <C-v> <ESC>"+pa
 """ Quicker splits
 nnoremap <silent> <leader>vv :vsplit<cr>
 nnoremap <silent> <leader>hh :split<cr>
+
+""" Navigate splits
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-l> <C-w><C-l>
+nnoremap <C-h> <C-w><C-h>
