@@ -144,6 +144,10 @@ let g:lmap.l.ct = [':Vista!',                           'Close Tag Bar']
 let g:lmap.n = { 'name': 'NERDTree' }
 let g:lmap.w = { 'name': 'VimWiki' }
 
+let g:lmap.v = { 'name': 'Splits' }
+let g:lmap.v.v = ['vsplit', 'Vertical Split']
+let g:lmap.v.h = ['split', 'Horizontal Split']
+
 nmap <silent> <leader>la <Plug>(coc-codeaction)
 vmap <silent> <leader>la <Plug>(coc-codeaction-selected)
 
@@ -189,7 +193,7 @@ imap <C-v> <ESC>"+pa
 
 """ Quicker splits
 nnoremap <silent> <leader>vv :vsplit<cr>
-nnoremap <silent> <leader>hh :split<cr>
+nnoremap <silent> <leader>vh :split<cr>
 
 """ Navigate splits
 nnoremap <C-j> <C-w><C-j>
