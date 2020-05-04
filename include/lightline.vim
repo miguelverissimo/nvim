@@ -64,12 +64,30 @@ function! LightlineModified()
 endfunction
 
 function! LightlineFilename()
-  let l:fname = expand('%')
+  let l:fname = fnamemodify(expand("%"), ":~:.")
   return  l:fname ==# '__Tagbar__' ? g:lightline.fname :
         \ l:fname =~# '__Gundo\|NERD_tree' ? '' :
         \ ('' !=# LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
         \ ('' !=# l:fname ? l:fname : '[No Name]') .
         \ ('' !=# LightlineModified() ? ' ' . LightlineModified() : '')
+endfunction
+
+function! LightLineFilenameAbbreviated()
+	let name = ""
+	let subs = split(expand('%'), "/")
+	let i = 1
+	for s in subs
+		let parent = name
+		if  i == len(subs)
+			let name = parent . '/' . s
+		elseif i == 1
+			let name = s
+		else
+			let name = parent . '/' . strpart(s, 0, 2)
+		endif
+		let i += 1
+	endfor
+  return name
 endfunction
 
 function! LightlineReadonly()
