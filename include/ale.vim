@@ -4,18 +4,19 @@ let g:ale_go_langserver_executable = 'gopls'
 let g:ale_elixir_elixir_ls_release = '$HOME/elixir-ls'
 
 let g:ale_linters_explicit = 1
+
 let g:ale_linters = {
-\   'go': ['golangci-lint', 'gopls'],
+\   'go':         ['golangci-lint', 'gopls'],
 \   'typescript': ['tsserver', 'typecheck'],
 \   'javascript': ['eslint'],
-\   'ruby': ['rubocop', 'ruby'],
-\   'elixir': ['elixir-ls'],
+\   'ruby':       ['rubocop', 'standardrb', 'ruby'],
+\   'elixir':     ['elixir-ls'],
 \}
 
 let g:ale_fixers = {
-\   'elixir': ['mix_format'],
-\   'ruby': ['rubocop'],
 \   'javascript': ['importjs', 'prettier_eslint', 'prettier-eslint', 'trim_whitespace'],
+\   'elixir':     ['mix_format'],
+\   'ruby':       ['rubocop', 'standardrb'],
 \}
 
 
