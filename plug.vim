@@ -8,7 +8,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Color schemes {
 Plug 'chriskempson/base16-vim'
 Plug 'joshdick/onedark.vim'
-Plug 'miguelverissimo/tendinitis'
+Plug 'miguelverissimo/tendinitis', { 'branch': 'foo' }
 Plug 'Rigellute/rigel'
 Plug 'tjammer/blayu.vim'
 Plug 'flrnd/candid.vim'
@@ -254,7 +254,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'posva/vim-vue', { 'for': 'vue' }
 " }
 
-" CSS / HTML {
+" HTML / CSS (including frameworks) {
 Plug 'othree/html5.vim'
 Plug 'mattn/emmet-vim'
 Plug 'cakebaker/scss-syntax.vim'
