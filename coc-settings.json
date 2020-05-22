@@ -3,5 +3,6 @@
   "eslint.enable": false,
   "diagnostic.errorSign": "",
   "diagnostic.warningSign": "",
-  "diagnostic.infoSign": ""
+  "diagnostic.infoSign": "",
+  "coc.preferences.extensionUpdateCheck": "daily"
 }
