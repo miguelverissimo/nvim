@@ -87,3 +87,7 @@ ways that confuse [vim-plug](https://github.com/junegunn/vim-plug). A simple way
 to reset your plugin installation and start over is to remove them from the
 load path in `~/.local/share/nvim/plugged` which can be run with
 `:ConfigResetAllPluginsReallyDoIt!`.
+
+If you get a message in the likes of `[coc.nvim] compiled javascript file not found!`,
+find the plugins directory (`~/.local/share/nvim/plugged`) navigate to `coc.nvim` and
+run `install.sh`; If that's not available, try `yarn install` from the same directory.
