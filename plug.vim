@@ -284,6 +284,11 @@ Plug 'junegunn/vader.vim'
 Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-haml'
 Plug 'andrewstuart/vim-kubernetes'
+Plug 'mustache/vim-mustache-handlebars'
+" }
+
+" Helm {
+Plug 'towolf/vim-helm'
 " }
 
 " Text objects {
