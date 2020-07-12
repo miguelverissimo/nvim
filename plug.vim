@@ -271,6 +271,10 @@ Plug 'elmcast/elm-vim', { 'for': 'elm' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 " }
 
+" Nix {
+Plug 'LnL7/vim-nix'
+" }
+
 " Misc {
 Plug 'PProvost/vim-ps1'
 Plug 'PotatoesMaster/i3-vim-syntax'
