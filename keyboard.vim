@@ -3,7 +3,7 @@ nnoremap <silent> <M-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr>
 
 "" Fuzzy file browsing
 nnoremap <silent> <C-p> :FZFFiles<CR>
-nnoremap <silent> <c-p> :Clap files --hidden<CR>
+nnoremap <silent> <M-f> :Clap files --hidden<CR>
 
 """ Tab navigation
 map <C-t><up> :tabr<cr>
@@ -299,8 +299,8 @@ omap af <Plug>(coc-funcobj-a)
 " Use <TAB> for selections ranges.
 " NOTE: Requires 'textDocument/selectionRange' support from the language server.
 " coc-tsserver, coc-python are the examples of servers that support it.
-nmap <silent> <TAB> <Plug>(coc-range-select)
-xmap <silent> <TAB> <Plug>(coc-range-select)
+" nmap <silent> <TAB> <Plug>(coc-range-select)
+" xmap <silent> <TAB> <Plug>(coc-range-select)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
@@ -316,3 +316,5 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
+" Remap C-I to be C-I
+nnoremap <C-I> <C-I>
