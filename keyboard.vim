@@ -318,3 +318,6 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Remap C-I to be C-I
 nnoremap <C-I> <C-I>
+
+" Grepper
+nnoremap gs :Grepper -tool ag -cword -noprompt<cr>
