@@ -14,6 +14,7 @@ set report=0              " Always report changed lines
 set scrolloff=5           " Minumum lines to keep above and below cursor
 set showmatch             " Show matching brackets/parentthesis
 set splitright            " Vertical splits to the right
+set splitbelow            " Horizontal splits below
 set termguicolors         " Enable true colors in terminal
 set updatetime=100        " Update swap file and CursorHold delay
 set timeoutlen=700        " Timeout for keybindings
