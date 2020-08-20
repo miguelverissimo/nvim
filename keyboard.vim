@@ -1,19 +1,22 @@
 " Full redraw fixing syntax highlight bugs
 nnoremap <silent> <M-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr>:redraw!<cr>
 
+" Flygrep with <SPC>ss
+nnoremap <leader>ss :FlyGrep<cr>
+
 "" Fuzzy file browsing
 nnoremap <silent> <C-p> :FZFFiles<CR>
 nnoremap <silent> <M-f> :Clap files --hidden<CR>
 
 """ Tab navigation
-map <C-t><up> :tabr<cr>
-map <C-t><k> :tabr<cr>
-map <C-t><down> :tabl<cr>
-map <C-t><j> :tabl<cr>
-map <C-t><left> :tabp<cr>
-map <C-t><h> :tabp<cr>
-map <C-t><right> :tabn<cr>
-map <C-t><l> :tabn<cr>
+map <C-t><up> :tabright<cr>
+map <C-t><k> :tabright<cr>
+map <C-t><down> :tableft<cr>
+map <C-t><j> :tableft<cr>
+map <C-t><left> :tabprevious<cr>
+map <C-t><h> :tabprevious<cr>
+map <C-t><right> :tabnext<cr>
+map <C-t><l> :tabnext<cr>
 
 """ Copy to system clipboard
 vmap <C-c> "+y
@@ -132,6 +135,7 @@ nnoremap <silent> <leader>sg :Grepper<CR>
 let g:lmap.s.f = [':FZFRg ', 'FZFRg']
 nnoremap <silent> <leader>st :FZFTags<CR>
 nnoremap <silent> <leader>sl :FZFLines<CR>
+let g:lmap.s.s = { 'name': 'FlyGrep' }
 
 let g:lmap.y = { 'name': 'Cscope' }
 let g:lmap.y.s = ['cs find s <cword>',                                            'Cscope Symbol']

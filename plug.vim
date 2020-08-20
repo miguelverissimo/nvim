@@ -6,12 +6,13 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Color schemes {
-Plug 'chriskempson/base16-vim'
-Plug 'joshdick/onedark.vim'
 Plug 'miguelverissimo/tendinitis', { 'branch': 'foo' }
-Plug 'Rigellute/rigel'
-Plug 'tjammer/blayu.vim'
-Plug 'flrnd/candid.vim'
+Plug 'nightsense/snow'
+Plug 'nightsense/stellarized'
+Plug 'farfanoide/vim-facebook'
+Plug 'jonathanfilip/vim-lucius'
+Plug 'chriskempson/base16-vim'
+Plug 'rafi/awesome-vim-colorschemes'
 " }
 
 " NERDTree {
@@ -200,6 +201,12 @@ Plug 'tpope/vim-vinegar'
 " Improved incremental searching
 Plug 'haya14busa/incsearch.vim'
 " }
+
+" Session management
+Plug 'tpope/vim-obsession'
+
+" FlyGrep
+Plug 'wsdjeg/FlyGrep.vim'
 
 " Language configuration {
 " Testing {
