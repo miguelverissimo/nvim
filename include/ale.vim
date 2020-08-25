@@ -7,7 +7,7 @@ let g:ale_linters_explicit = 1
 
 let g:ale_linters = {
 \   'go':         ['golangci-lint', 'gopls'],
-\   'typescript': ['tsserver', 'typecheck'],
+\   'typescript': ['eslint', 'tsserver', 'typecheck', 'prettier'],
 \   'javascript': ['eslint'],
 \   'ruby':       ['rubocop', 'standardrb', 'ruby'],
 \   'elixir':     ['elixir-ls'],
@@ -17,6 +17,7 @@ let g:ale_fixers = {
 \   'javascript': ['importjs', 'prettier_eslint', 'prettier-eslint', 'trim_whitespace'],
 \   'elixir':     ['mix_format'],
 \   'ruby':       ['rubocop', 'standardrb'],
+\   'typescript': ['eslint', 'prettier'],
 \}
 
 

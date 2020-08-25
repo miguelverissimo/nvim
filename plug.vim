@@ -9,10 +9,10 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'miguelverissimo/tendinitis', { 'branch': 'foo' }
 Plug 'nightsense/snow'
 Plug 'nightsense/stellarized'
-Plug 'farfanoide/vim-facebook'
-Plug 'jonathanfilip/vim-lucius'
 Plug 'chriskempson/base16-vim'
 Plug 'rafi/awesome-vim-colorschemes'
+Plug 'hardcoreplayers/oceanic-material'
+Plug 'jnurmine/zenburn'
 " }
 
 " NERDTree {
@@ -255,6 +255,7 @@ Plug 'jparise/vim-graphql'
 
 " TypeScript {
 Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 " }
 
 " Vue {

@@ -2,9 +2,11 @@ if !exists('g:colors_name')
   syntax enable
   set background=dark
 
-  let g:nord_italic = 1
-  colorscheme nord
-  let g:lightline.colorscheme = 'nord'
+  let g:lightline.colorscheme = 'elixizy'
+
+  " let g:nord_italic = 1
+  " colorscheme nord
+  " let g:lightline.colorscheme = 'nord'
 
   " let g:two_firewatch_italics=1
   " colorscheme two-firewatch
@@ -21,14 +23,6 @@ if !exists('g:colors_name')
 
   " colorscheme stellarized
 
-  " colorscheme facebook
-
-  " colorscheme lucius
-  " let g:lightline.colorscheme = 'lucius'
-
-  " colorscheme snow
-  " let g:lightline.colorscheme = 'elixizy'
-
   " colorscheme tender
   " let g:lightline.colorscheme = 'tender'
 
@@ -41,4 +35,20 @@ if !exists('g:colors_name')
 
   " colorscheme tendinitis
   " let g:lightline.colorscheme = 'tendinitis'
+
+  colorscheme iceberg
+  let g:lightline.colorscheme = 'iceberg'
+
+  " let g:hybrid_reduced_contrast = 1
+  " colorscheme hybrid
+
+  " colorscheme hybrid_reverse
+
+  " let g:oceanic_material_background = 'ocean'
+  " colorscheme oceanic_material
+
+  " colorscheme snow
+  " let g:lightline.colorscheme = 'snow_dark'
+
+  " colorscheme zenburn
 endif
