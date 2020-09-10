@@ -19,4 +19,4 @@ function! RestoreSess()
   endif
 endfunction
 
-autocmd VimEnter * nested call RestoreSess()
+autocmd VimEnter * nested if !argc() | call RestoreSess() | endif
