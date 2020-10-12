@@ -326,3 +326,5 @@ nnoremap <C-I> <C-I>
 " Grepper
 nmap gs <plug>(GrepperOperator)
 xmap gs <plug>(GrepperOperator)
+nmap gz <plug>(GrepperOperator)
+xmap gz <plug>(GrepperOperator)
