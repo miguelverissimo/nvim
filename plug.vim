@@ -13,6 +13,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'hardcoreplayers/oceanic-material'
 Plug 'jnurmine/zenburn'
+Plug 'artanikin/vim-synthwave84'
 " }
 
 " NERDTree {

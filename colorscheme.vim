@@ -2,7 +2,11 @@ if !exists('g:colors_name')
   syntax enable
   set background=dark
 
-  let g:lightline.colorscheme = 'elixizy'
+  colorscheme iceberg
+  let g:lightline.colorscheme = 'iceberg'
+
+  " let g:lightline.colorscheme = 'elixizy'
+  " colorscheme synthwave84
 
   " let g:nord_italic = 1
   " colorscheme nord
@@ -35,9 +39,6 @@ if !exists('g:colors_name')
 
   " colorscheme tendinitis
   " let g:lightline.colorscheme = 'tendinitis'
-
-  colorscheme iceberg
-  let g:lightline.colorscheme = 'iceberg'
 
   " let g:hybrid_reduced_contrast = 1
   " colorscheme hybrid
