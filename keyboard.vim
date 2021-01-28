@@ -125,10 +125,13 @@ nmap     <silent> <leader>f. <Plug>(open-alternate)
 
 let g:lmap.h = { 'name': 'Hunks' }
 let g:lmap.g = { 'name': 'Git' }
-nnoremap <silent> <leader>gs :Gstatus<CR>
-nnoremap <silent> <leader>gc :FZFCommits<CR>
-nnoremap <silent> <leader>gk :FZFBCommits<CR>
-nnoremap <silent> <leader>gb :Gblame<CR>
+let g:lmap.g.a = [ ':G add -p', 'add']
+let g:lmap.g.s = [ ':G', 'status']
+let g:lmap.g.d = [ ':FZFBCommits', 'diff']
+let g:lmap.g.b = [ ':Gblame', 'blame']
+let g:lmap.g.c = [ ':Git commit', 'commit']
+let g:lmap.g.f = [ ':FZFBCommits', 'file commits']
+let g:lmap.g.k = [ ':FZFCommits', 'all commits']
 
 let g:lmap.s = { 'name': 'Search' }
 nnoremap <silent> <leader>sg :Grepper<CR>
