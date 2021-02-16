@@ -9,14 +9,19 @@ nnoremap <silent> <C-p> :FZFFiles<CR>
 nnoremap <silent> <M-f> :Clap files --hidden<CR>
 
 """ Tab navigation
-map <C-t><up> :tabright<cr>
-map <C-t><k> :tabright<cr>
-map <C-t><down> :tableft<cr>
-map <C-t><j> :tableft<cr>
-map <C-t><left> :tabprevious<cr>
-map <C-t><h> :tabprevious<cr>
-map <C-t><right> :tabnext<cr>
-map <C-t><l> :tabnext<cr>
+" map <C-t><up> :tabright<cr>
+" map <C-t><k> :tabright<cr>
+" map <C-t><down> :tableft<cr>
+" map <C-t><j> :tableft<cr>
+" map <C-t><left> :tabprevious<cr>
+" map <C-t><h> :tabprevious<cr>
+" map <C-t><right> :tabnext<cr>
+" map <C-t><l> :tabnext<cr>
+" map <C-t></> :tabnew<cr>
+nnoremap tl :tabnext<CR>
+nnoremap th :tabprev<CR>
+nnoremap tn :tabnew<CR>
+nnoremap tc :tabclose<CR>
 
 """ Copy to system clipboard
 vmap <C-c> "+y
@@ -327,7 +332,4 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 nnoremap <C-I> <C-I>
 
 " Grepper
-nmap gs <plug>(GrepperOperator)
-xmap gs <plug>(GrepperOperator)
-nmap gz <plug>(GrepperOperator)
-xmap gz <plug>(GrepperOperator)
+nmap <silent> gz :Grepper -noprompt -cword<CR>
