@@ -165,13 +165,8 @@ Plug 'tpope/vim-rhubarb'
 " }
 
 " Autocomplete / Snippets {
-if executable('yarn')
-  " Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
-  Plug 'neoclide/coc.nvim', { 'do': { -> coc#util#install()} }
-
-  " View and search LSP symbols, tags in Vim
-  Plug 'liuchengxu/vista.vim'
-endif
+Plug 'natebosch/vim-lsc'
+Plug 'ajh17/VimCompletesMe'
 
 Plug 'honza/vim-snippets'
 " }
