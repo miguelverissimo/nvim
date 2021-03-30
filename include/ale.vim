@@ -6,11 +6,12 @@ let g:ale_elixir_elixir_ls_release = '$HOME/elixir-ls'
 let g:ale_linters_explicit = 1
 
 let g:ale_linters = {
-\   'go':         ['golangci-lint', 'gopls'],
+\   'go': ['golangci-lint'],
 \   'typescript': ['eslint', 'tsserver', 'typecheck', 'prettier'],
 \   'javascript': ['eslint'],
-\   'ruby':       ['rubocop'],
-\   'elixir':     ['elixir-ls'],
+\   'ruby': ['rubocop', 'ruby'],
+\   'proto': [],
+\   'elixir': ['elixir-ls'],
 \}
 
 let g:ale_fixers = {
@@ -48,6 +49,11 @@ let g:ale_set_balloons = 0
 let g:ale_echo_cursor = 1
 let g:ale_virtualtext_cursor = 1
 let g:ale_virtualtext_prefix = '  '
+let g:ale_hover_cursor = 0
+let g:ale_echo_cursor = 1
+let g:ale_fix_on_save = 1
+let g:ale_disable_lsp = 1
+let g:ale_set_loclist = 0
 
 highlight link ALEVirtualTextError ErrorMsg
 highlight link ALEVirtualTextStyleError ALEVirtualTextError

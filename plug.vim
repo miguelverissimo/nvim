@@ -44,6 +44,11 @@ Plug 'ryanoasis/vim-devicons'
 
 " Visual guide for keybindings {
 Plug 'hecal3/vim-leader-guide'
+" Plug 'liuchengxu/vim-which-key'
+" }
+
+" Visual register search
+Plug 'junegunn/vim-peekaboo'
 " }
 
 " Editing -- Text manipulation helpers {

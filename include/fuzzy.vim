@@ -18,22 +18,21 @@ augroup config#fzf
         \| autocmd BufLeave <buffer> set laststatus=2 ruler
 augroup END
 
-let g:fzf_layout = { 'down': '~20%' }
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 
 let g:fzf_colors =
-\ { 'fg':      ['fg', 'Comment'],
+\ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'PreProc'],
-  \ 'fg+':     ['fg', 'Visual'],
-  \ 'bg+':     ['bg', 'Visual'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
   \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'Number'],
+  \ 'info':    ['fg', 'PreProc'],
   \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Constant'],
+  \ 'prompt':  ['fg', 'Conditional'],
   \ 'pointer': ['fg', 'Exception'],
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 
 let g:fzf_history_dir = '~/.local/share/fzf-history'
-
