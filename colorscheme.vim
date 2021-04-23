@@ -2,8 +2,8 @@ if !exists('g:colors_name')
   syntax enable
   set background=dark
 
-  colorscheme iceberg
-  let g:lightline.colorscheme = 'iceberg'
+  " colorscheme iceberg
+  " let g:lightline.colorscheme = 'iceberg'
 
   " let g:lightline.colorscheme = 'elixizy'
   " colorscheme synthwave84
@@ -52,4 +52,5 @@ if !exists('g:colors_name')
   " let g:lightline.colorscheme = 'snow_dark'
 
   " colorscheme zenburn
+  colorscheme dracula_pro_buffy
 endif

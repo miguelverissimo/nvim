@@ -6,18 +6,24 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Color schemes {
-Plug 'miguelverissimo/tendinitis', { 'branch': 'foo' }
-Plug 'nightsense/snow'
-Plug 'nightsense/stellarized'
-Plug 'chriskempson/base16-vim'
-Plug 'rafi/awesome-vim-colorschemes'
-Plug 'hardcoreplayers/oceanic-material'
-Plug 'jnurmine/zenburn'
-Plug 'artanikin/vim-synthwave84'
+Plug 'miguelverissimo/dracula_pro_vim'
+" Plug 'miguelverissimo/tendinitis', { 'branch': 'foo' }
+" Plug 'nightsense/snow'
+" Plug 'nightsense/stellarized'
+" Plug 'chriskempson/base16-vim'
+" Plug 'rafi/awesome-vim-colorschemes'
+" Plug 'hardcoreplayers/oceanic-material'
+" Plug 'jnurmine/zenburn'
+" Plug 'artanikin/vim-synthwave84'
 " }
 
 " NERDTree {
 Plug 'scrooloose/nerdtree'
+" }
+
+" auto close parenthesis {
+" Plug 'townk/vim-autoclose'
+" Plug 'jiangmiao/auto-pairs'
 " }
 
 " UI -- User interface additions {
@@ -302,7 +308,12 @@ Plug 'junegunn/vader.vim'
 Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-haml'
 Plug 'andrewstuart/vim-kubernetes'
+" }
+
+" Ember stuff {
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'joukevandermaas/vim-ember-hbs'
+Plug 'AndrewRadev/ember_tools'
 " }
 
 " Helm {
