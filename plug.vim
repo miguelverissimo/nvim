@@ -313,7 +313,7 @@ Plug 'andrewstuart/vim-kubernetes'
 " Ember stuff {
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'joukevandermaas/vim-ember-hbs'
-Plug 'AndrewRadev/ember_tools'
+Plug 'AndrewRadev/ember_tools.vim'
 " }
 
 " Helm {
