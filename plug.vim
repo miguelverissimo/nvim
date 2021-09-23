@@ -220,6 +220,9 @@ Plug 'tpope/vim-obsession'
 " FlyGrep
 Plug 'wsdjeg/FlyGrep.vim'
 
+" vim maximize split
+Plug 'szw/vim-maximizer'
+
 " Language configuration {
 " Testing {
 Plug 'janko/vim-test'

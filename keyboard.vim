@@ -39,6 +39,9 @@ nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-h> <C-w><C-h>
 
+" maximize current split or return to previous
+noremap <C-w>m :MaximizerToggle<CR>
+
 "" ALE
 nmap <silent> <M-p> <Plug>(ale_previous_wrap)
 nmap <silent> <M-n> <Plug>(ale_next_wrap)
