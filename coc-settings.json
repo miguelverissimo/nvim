@@ -9,6 +9,7 @@
   "coc.preferences.formatOnSaveFiletypes": ["json", "css", "markdown"],
   "eslint.autoFixOnSave": true,
   "tsserver.enableJavascript": false,
+  "elixir.pathToElixirLS": "$ELIXIR_LS_HOME/bin/elixir-ls",
   "languageserver": {
     "flow": {
       "command": "flow",
