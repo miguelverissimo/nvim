@@ -1,6 +1,7 @@
 """ Format elixir files with mix on save
 let g:mix_format_on_save = 1
 
+
 " Elixir language server setup (using ale):
 "
 " $ git clone git@github.com:elixir-lsp/elixir-ls.git
