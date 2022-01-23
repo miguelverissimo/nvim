@@ -6,7 +6,7 @@
   "diagnostic.warningSign": "",
   "diagnostic.infoSign": "",
   "coc.preferences.extensionUpdateCheck": "daily",
-  "coc.preferences.formatOnSaveFiletypes": ["json", "css", "markdown"],
+  "coc.preferences.formatOnSaveFiletypes": ["ruby", "json", "css", "markdown"],
   "eslint.autoFixOnSave": true,
   "tsserver.enableJavascript": false,
   "elixir.pathToElixirLS": "$ELIXIR_LS_HOME/bin/elixir-ls",
