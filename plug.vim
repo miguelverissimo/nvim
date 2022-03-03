@@ -193,7 +193,13 @@ Plug 'w0rp/ale'
 " }
 
 " Navigation -- Fuzzy find, searching, etc {
-" Modern performant generic finder and dispatcher for Vim and NeoVim
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'kyazdani42/nvim-web-devicons'
+
+" " Modern performant generic finder and dispatcher for Vim and NeoVim
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 
 " fzf

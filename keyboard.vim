@@ -5,7 +5,8 @@ nnoremap <silent> <M-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr>
 nnoremap <leader>ss :FlyGrep<cr>
 
 "" Fuzzy file browsing
-nnoremap <silent> <C-p> :FZFFiles<CR>
+nnoremap <silent> <C-p> <cmd>Telescope find_files hidden=true<CR>
+" nnoremap <silent> <C-p> :FZFFiles<CR>
 nnoremap <silent> <M-f> :Clap files --hidden<CR>
 
 """ Tab navigation
@@ -142,7 +143,11 @@ let g:lmap.g.f = [ ':FZFBCommits', 'file commits']
 let g:lmap.g.k = [ ':FZFCommits', 'all commits']
 
 let g:lmap.s = { 'name': 'Search' }
-nnoremap <silent> <leader>sg :Grepper<CR>
+nnoremap <silent> <leader>sg <cmd>Telescope live_grep<CR>
+" " Grepper
+" nmap <silent> gz :Grepper -noprompt -cword<CR>
+:nnoremap <silent> gz :lua require'telescope.builtin'.grep_string()<CR>
+" nnoremap <silent> <leader>sg :Grepper<CR>
 let g:lmap.s.f = [':FZFRg ', 'FZFRg']
 nnoremap <silent> <leader>st :FZFTags<CR>
 nnoremap <silent> <leader>sl :FZFLines<CR>
@@ -334,5 +339,3 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " Remap C-I to be C-I
 nnoremap <C-I> <C-I>
 
-" Grepper
-nmap <silent> gz :Grepper -noprompt -cword<CR>
