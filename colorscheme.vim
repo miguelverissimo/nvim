@@ -1,5 +1,11 @@
 if !exists('g:colors_name')
   syntax enable
+  let base16colorspace=256
+
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+
   set background=dark
 
   " colorscheme iceberg
@@ -52,5 +58,9 @@ if !exists('g:colors_name')
   " let g:lightline.colorscheme = 'snow_dark'
 
   " colorscheme zenburn
-  colorscheme dracula_pro_buffy
+  " colorscheme dracula_pro_buffy
+  colorscheme hybrid
+  " colorscheme deep-space
+  " colorscheme night-owl
+  " let g:lightline.colorscheme = 'night-owl'
 endif

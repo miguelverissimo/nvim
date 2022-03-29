@@ -8,14 +8,14 @@ let g:ale_linters_explicit = 1
 let g:ale_linters = {
 \   'go': ['golangci-lint'],
 \   'typescript': ['eslint', 'tsserver', 'typecheck', 'prettier'],
-\   'javascript': ['eslint'],
+\   'javascript': ['prettier', 'eslint'],
 \   'ruby': ['rubocop', 'ruby', 'standardrb'],
 \   'proto': [],
 \   'elixir': ['elixir-ls'],
 \}
 
 let g:ale_fixers = {
-\   'javascript': ['importjs', 'prettier_eslint', 'prettier-eslint', 'trim_whitespace'],
+\   'javascript': ['prettier_eslint', 'prettier', 'importjs',  'trim_whitespace'],
 \   'elixir':     ['mix_format'],
 \   'ruby':       ['rubocop', 'standardrb'],
 \   'typescript': ['eslint', 'prettier'],

@@ -6,12 +6,17 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Color schemes {
-Plug 'miguelverissimo/dracula_pro_vim'
+Plug 'w0ng/vim-hybrid'
+" Plug 'miguelverissimo/dracula_pro_vim'
+" Plug 'rafi/awesome-vim-colorschemes'
+" Plug 'tyrannicaltoucan/vim-deep-space'
+" Plug 'haishanh/night-owl.vim'
+" Plug 'jacoborus/tender.vim'
+
 " Plug 'miguelverissimo/tendinitis', { 'branch': 'foo' }
 " Plug 'nightsense/snow'
 " Plug 'nightsense/stellarized'
 " Plug 'chriskempson/base16-vim'
-" Plug 'rafi/awesome-vim-colorschemes'
 " Plug 'hardcoreplayers/oceanic-material'
 " Plug 'jnurmine/zenburn'
 " Plug 'artanikin/vim-synthwave84'
