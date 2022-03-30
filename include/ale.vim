@@ -6,19 +6,24 @@ let g:ale_elixir_elixir_ls_release = '$HOME/elixir-ls'
 let g:ale_linters_explicit = 1
 
 let g:ale_linters = {
-\   'go': ['golangci-lint'],
+\   'go':         ['golangci-lint'],
 \   'typescript': ['eslint', 'tsserver', 'typecheck', 'prettier'],
 \   'javascript': ['prettier', 'eslint'],
-\   'ruby': ['rubocop', 'ruby', 'standardrb'],
-\   'proto': [],
-\   'elixir': ['elixir-ls'],
+\   'ruby':       ['rubocop', 'ruby', 'standardrb'],
+\   'elixir':     ['elixir-ls'],
+\   'eruby':      ['erblint'],
+\   'html':       ['stylelint', 'tidy', 'prettier'],
+\   'css':        ['stylelint', 'prettier'],
 \}
 
 let g:ale_fixers = {
-\   'javascript': ['prettier_eslint', 'prettier', 'importjs',  'trim_whitespace'],
+\   'javascript': ['prettier_eslint', 'prettier', 'importjs', 'trim_whitespace'],
 \   'elixir':     ['mix_format'],
-\   'ruby':       ['rubocop', 'standardrb'],
-\   'typescript': ['eslint', 'prettier'],
+\   'ruby':       ['rubocop', 'standardrb', 'trim_whitespace'],
+\   'typescript': ['eslint', 'prettier', 'trim_whitespace'],
+\   'eruby':      ['erblint', 'trim_whitespace'],
+\   'html':       ['prettier', 'trim_whitespace'],
+\   'css':        ['stylelint', 'prettier', 'trim_whitespace'],
 \}
 
 
