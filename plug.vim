@@ -22,6 +22,9 @@ Plug 'w0ng/vim-hybrid'
 " Plug 'artanikin/vim-synthwave84'
 " }
 
+" LSP
+Plug 'neovim/nvim-lspconfig'
+
 " NERDTree {
 Plug 'scrooloose/nerdtree'
 " }

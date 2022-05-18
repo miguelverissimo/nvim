@@ -228,22 +228,22 @@ let g:lmap.c.f = ['call feedkeys("\<Plug>(coc-fix-current)")', 'Fix Current']
 
 
 " Goto
-let g:lmap.c.g = { 'name': 'Go To' }
-" Goto definition
-let g:lmap.c.g.d = ['call feedkeys("\<Plug>(coc-definition)")', 'Definition']
-nmap <silent> gd <Plug>(coc-definition)
+" let g:lmap.c.g = { 'name': 'Go To' }
+" " Goto definition
+" let g:lmap.c.g.d = ['call feedkeys("\<Plug>(coc-definition)")', 'Definition']
+" nmap <silent> gd <Plug>(coc-definition)
 
-" Goto type definition
-let g:lmap.c.g.y = ['call feedkeys("\<Plug>(coc-type-definition)")', 'Type Definition']
-nmap <silent> gy <Plug>(coc-type-definition)
+" " Goto type definition
+" let g:lmap.c.g.y = ['call feedkeys("\<Plug>(coc-type-definition)")', 'Type Definition']
+" nmap <silent> gy <Plug>(coc-type-definition)
 
-" Goto type definition
-let g:lmap.c.g.i = ['call feedkeys("\<Plug>(coc-implementation)")', 'Implementation']
-nmap <silent> gi <Plug>(coc-implementation)
+" " Goto type definition
+" let g:lmap.c.g.i = ['call feedkeys("\<Plug>(coc-implementation)")', 'Implementation']
+" nmap <silent> gi <Plug>(coc-implementation)
 
-" Goto type definition
-let g:lmap.c.g.r = ['call feedkeys("\<Plug>(coc-references)")', 'References (callers)']
-nmap <silent> gr <Plug>(coc-references)
+" " Goto type definition
+" let g:lmap.c.g.r = ['call feedkeys("\<Plug>(coc-references)")', 'References (callers)']
+" nmap <silent> gr <Plug>(coc-references)
 
 if executable('yarn')
   imap <C-j> <Plug>(coc-snippets-expand-jump)

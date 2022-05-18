@@ -95,8 +95,8 @@ function! LightlineReadonly()
 endfunction
 
 function! LightlineFugitive()
-  if exists('*fugitive#head')
-    let l:branch = fugitive#head()
+  if exists('*FugitiveHead()')
+    let l:branch = FugitiveHead()
     return l:branch !=# '' ? ' '.l:branch : ''
   endif
   return ''
