@@ -45,11 +45,18 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+
+local elixir_ls_home = os.getenv('ELIXIR_LS_HOME') or "set it on $ELIXIR_LS_HOME";
+
 nvim_lsp.elixirls.setup {
   on_attach = on_attach,
   flags = {
     debounce_text_changes = 150,
   };
-  cmd = { os.getenv("ELIXIR_LS_HOME") .. "/bin/elixir-ls" };
+    cmd = { elixir_ls_home .. "/bin/elixir-ls" };
 }
+
+local function is_empty(s)
+ return s == nil and s == ''
+end
 EOF
