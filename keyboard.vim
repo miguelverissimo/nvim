@@ -1,9 +1,6 @@
 " Full redraw fixing syntax highlight bugs
 nnoremap <silent> <M-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr>:redraw!<cr>
 
-" Flygrep with <SPC>ss
-nnoremap <leader>ss :FlyGrep<cr>
-
 "" Fuzzy file browsing
 nnoremap <silent> <C-p> <cmd>Telescope find_files hidden=true<CR>
 " nnoremap <silent> <C-p> :FZFFiles<CR>
@@ -151,7 +148,7 @@ nnoremap <silent> <leader>sg <cmd>Telescope live_grep<CR>
 let g:lmap.s.f = [':FZFRg ', 'FZFRg']
 nnoremap <silent> <leader>st :FZFTags<CR>
 nnoremap <silent> <leader>sl :FZFLines<CR>
-let g:lmap.s.s = { 'name': 'FlyGrep' }
+let g:lmap.s.s = ['Grepper', 'Grepper' ]
 
 let g:lmap.y = { 'name': 'Cscope' }
 let g:lmap.y.s = ['cs find s <cword>',                                            'Cscope Symbol']
@@ -163,12 +160,6 @@ let g:lmap.y.z = ['!sh -xc ''starscope -e cscope -e ctags -x "*.go" -x "*.js"'''
 let g:lmap.y.o = ['cs add cscope.out',                                            'Cscope Open Database']
 
 let g:lmap.e = { 'name': 'Emmet (HTML toolkit)' }
-
-let g:lmap.l = { 'name': 'Language Server' }
-let g:lmap.l.k =  [':call CocAction("doHover")', 'Hover']
-let g:lmap.l.s =  [':Vista finder coc', 'Symbols']
-let g:lmap.l.t =  [':Vista coc', 'Tag Bar']
-let g:lmap.l.ct = [':Vista!', 'Close Tag Bar']
 
 let g:lmap.n = { 'name': 'NERDTree' }
 nnoremap <leader>nn :NERDTreeToggle<CR>
@@ -189,70 +180,6 @@ let g:lmap.v = { 'name': 'Splits' }
 let g:lmap.v.v = ['vsplit', 'Vertical Split']
 let g:lmap.v.h = ['split', 'Horizontal Split']
 
-
-""" CoC
-let g:lmap.c = { 'name': 'CoC' }
-let g:lmap.c.c = { 'name': 'List' }
-" Show all diagnostics.
-let g:lmap.c.c.a = ['CocList diagnostics', 'Diagnostics']
-" Manage extensions.
-let g:lmap.c.c.e = ['CocList extensions', 'Extensions']
-" Show commands.
-let g:lmap.c.c.c = ['CocList commands', 'Commands']
-" Find symbol of current document.
-let g:lmap.c.c.o = ['CocList outline', 'Outline']
-" Search workspace symbols.
-let g:lmap.c.c.s = ['CocList -I symbols', 'Workspace symbols']
-" Do default action for next item.
-let g:lmap.c.c.j = ['CocNext', 'Next item (default action)']
-" Do default action for previous item.
-let g:lmap.c.c.k = ['CocPrev', 'Previous item (default action)']
-" Resume latest coc list.
-let g:lmap.c.c.p = ['CocListResume', 'Resume list']
-
-" Applying codeAction to the selected region.
-" Example: `<leader>aap` for current paragraph
-let g:lmap.c.a = ['call feedkeys("\<Plug>(coc-codeaction)")', 'Code Action']
-vmap <silent> <leader>ca <Plug>(coc-codeaction-selected)
-xmap <silent> <leader>ca <Plug>(coc-codeaction-selected)
-
-" Format selected
-let g:lmap.c['='] = ['call feedkeys("\<Plug>(coc-format)")', 'Format']
-vmap <silent> <leader>c= <Plug>(coc-format-selected)
-
-" Rename Symbol
-let g:lmap.c.r = ['call feedkeys("\<Plug>(coc-rename)")', 'Rename']
-
-" Fix current selection
-let g:lmap.c.f = ['call feedkeys("\<Plug>(coc-fix-current)")', 'Fix Current']
-
-
-" Goto
-" let g:lmap.c.g = { 'name': 'Go To' }
-" " Goto definition
-" let g:lmap.c.g.d = ['call feedkeys("\<Plug>(coc-definition)")', 'Definition']
-" nmap <silent> gd <Plug>(coc-definition)
-
-" " Goto type definition
-" let g:lmap.c.g.y = ['call feedkeys("\<Plug>(coc-type-definition)")', 'Type Definition']
-" nmap <silent> gy <Plug>(coc-type-definition)
-
-" " Goto type definition
-" let g:lmap.c.g.i = ['call feedkeys("\<Plug>(coc-implementation)")', 'Implementation']
-" nmap <silent> gi <Plug>(coc-implementation)
-
-" " Goto type definition
-" let g:lmap.c.g.r = ['call feedkeys("\<Plug>(coc-references)")', 'References (callers)']
-" nmap <silent> gr <Plug>(coc-references)
-
-if executable('yarn')
-  imap <C-j> <Plug>(coc-snippets-expand-jump)
-  vmap <C-j> <Plug>(coc-snippets-select)
-  let g:coc_snippet_next = '<c-j>'
-  let g:coc_snippet_prev = '<c-k>'
-  inoremap <silent><expr> <M-space> coc#refresh()
-endif
-
 " TextEdit might fail if hidden is not set.
 set hidden
 
@@ -266,13 +193,6 @@ set shortmess+=c
 " diagnostics appear/become resolved.
 set signcolumn=yes
 
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
@@ -280,62 +200,5 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use <F2> to trigger completion.
-inoremap <silent><expr> <F2> coc#refresh()
-
-" Use `[v` and `]v` to navigate diagnostics
-nmap <silent> [v <Plug>(coc-diagnostic-prev)
-nmap <silent> ]v <Plug>(coc-diagnostic-next)
-
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
-" Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
-augroup mygroup
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder.
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
-
-" Introduce function text object
-" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
-xmap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap if <Plug>(coc-funcobj-i)
-omap af <Plug>(coc-funcobj-a)
-
-" Use <TAB> for selections ranges.
-" NOTE: Requires 'textDocument/selectionRange' support from the language server.
-" coc-tsserver, coc-python are the examples of servers that support it.
-" nmap <silent> <TAB> <Plug>(coc-range-select)
-" xmap <silent> <TAB> <Plug>(coc-range-select)
-
-" Add `:Format` command to format current buffer.
-command! -nargs=0 Format :call CocAction('format')
-
-" Add `:Fold` command to fold current buffer.
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-
-" Add `:OR` command for organize imports of the current buffer.
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-
-" Add (Neo)Vim's native statusline support.
-" NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
 " Remap C-I to be C-I
 nnoremap <C-I> <C-I>
-
