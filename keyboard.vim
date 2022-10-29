@@ -1,8 +1,8 @@
 " Full redraw fixing syntax highlight bugs
 nnoremap <silent> <M-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr>:redraw!<cr>
 
-" Flygrep with <SPC>ss
-nnoremap <leader>ss :FlyGrep<cr>
+" Grepper with <SPC>ss
+" nnoremap <leader>ss :Grepper<cr>
 
 "" Fuzzy file browsing
 nnoremap <silent> <C-p> <cmd>Telescope find_files hidden=true<CR>
@@ -118,6 +118,9 @@ vnoremap <silent> <leader> :<c-u>LeaderGuideVisual '<Space>'<CR>
 let g:lmap[' '] = { 'name': 'General' }
 nnoremap <leader><leader>c :FZFCommands<CR>
 
+let g:lmap.b = { 'name': 'Buffers' }
+nnoremap <silent> <leader>bD :call DeleteHiddenBuffers()<CR>
+
 let g:lmap.t = { 'name': 'Testing' }
 nnoremap <silent> <leader>tt :TestNearest<CR>
 nnoremap <silent> <leader>t. :TestLast<CR>
@@ -143,7 +146,8 @@ let g:lmap.g.f = [ ':FZFBCommits', 'file commits']
 let g:lmap.g.k = [ ':FZFCommits', 'all commits']
 
 let g:lmap.s = { 'name': 'Search' }
-nnoremap <silent> <leader>sg <cmd>Telescope live_grep<CR>
+" nnoremap <silent> <leader>sg <cmd>Telescope live_grep<CR>
+nnoremap <silent> <leader>ss <cmd>Telescope live_grep<CR>
 " " Grepper
 " nmap <silent> gz :Grepper -noprompt -cword<CR>
 :nnoremap <silent> gz :lua require'telescope.builtin'.grep_string()<CR>
@@ -151,7 +155,7 @@ nnoremap <silent> <leader>sg <cmd>Telescope live_grep<CR>
 let g:lmap.s.f = [':FZFRg ', 'FZFRg']
 nnoremap <silent> <leader>st :FZFTags<CR>
 nnoremap <silent> <leader>sl :FZFLines<CR>
-let g:lmap.s.s = { 'name': 'FlyGrep' }
+let g:lmap.s.g = [':Grepper', 'Grepper']
 
 let g:lmap.y = { 'name': 'Cscope' }
 let g:lmap.y.s = ['cs find s <cword>',                                            'Cscope Symbol']
@@ -253,6 +257,20 @@ if executable('yarn')
   inoremap <silent><expr> <M-space> coc#refresh()
 endif
 
+" code completion
+" inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#next(0) : "\<Tab>"
+" inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+" inoremap <silent><expr> <up> coc#pum#visible() ? coc#pum#prev(0) : "\<up>"
+" inoremap <silent><expr> <Esc> coc#pum#visible() ? coc#pum#cancel() : "\<Esc>\<Esc>"
+" inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-y>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <C-x><C-z> coc#pum#visible() ? coc#pum#stop() : "\<C-x>\<C-z>"
+" remap for complete to use tab and <cr>
+inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#next(1): <SID>check_back_space() ? "\<Tab>" : coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+inoremap <silent><expr> <c-space> coc#refresh()
+
+
 " TextEdit might fail if hidden is not set.
 set hidden
 
@@ -269,11 +287,11 @@ set signcolumn=yes
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1

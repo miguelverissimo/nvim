@@ -59,8 +59,21 @@ if !exists('g:colors_name')
 
   " colorscheme zenburn
   " colorscheme dracula_pro_buffy
-  colorscheme hybrid
   " colorscheme deep-space
   " colorscheme night-owl
   " let g:lightline.colorscheme = 'night-owl'
+
+  " colorscheme hybrid
+
+   let g:everforest_background = 'hard'
+  " For better performance
+  " let g:everforest_better_performance = 1
+  let g:lightline.colorscheme = 'everforest'
+  colorscheme everforest
+
+  " let g:lightline.colorscheme = 'embark'
+  " colorscheme embark
+
+  " hi CocSearch guifg=#ffffff guibg=#34495e
+  " hi CocMenuSel guifg=#ffffff guibg=#e74c3c
 endif

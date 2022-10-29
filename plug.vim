@@ -20,6 +20,8 @@ Plug 'w0ng/vim-hybrid'
 " Plug 'hardcoreplayers/oceanic-material'
 " Plug 'jnurmine/zenburn'
 " Plug 'artanikin/vim-synthwave84'
+Plug 'sainnhe/everforest'
+Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 " }
 
 " NERDTree {
@@ -124,7 +126,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-abolish'
 
 " pairs of handy bracket mappings; e.g. [<Space> and ]<Space> add newlines before and after the cursor line
-Plug 'tpope/vim-unimpaired'
+" Plug 'tpope/vim-unimpaired'
 
 " Vim sugar for the UNIX shell commands that need it the most; e.g. :Find, :Wall
 Plug 'tpope/vim-eunuch'
@@ -183,7 +185,7 @@ Plug 'tpope/vim-rhubarb'
 " Autocomplete / Snippets {
 if executable('yarn')
   " Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
-  Plug 'neoclide/coc.nvim', { 'do': { -> coc#util#install()} }
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
   " View and search LSP symbols, tags in Vim
   Plug 'liuchengxu/vista.vim'
@@ -227,6 +229,7 @@ Plug 'haya14busa/incsearch.vim'
 
 " Session management
 Plug 'tpope/vim-obsession'
+" Plug 'natecraddock/sessions.nvim'
 
 " FlyGrep
 Plug 'wsdjeg/FlyGrep.vim'

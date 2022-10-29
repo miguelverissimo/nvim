@@ -18,6 +18,7 @@ let g:coc_global_extensions = [
 \   'coc-tailwindcss',
 \   'coc-prettier',
 \   'coc-elixir',
+\   'coc-pairs',
 \ ]
 
 autocmd CursorHold * silent call CocActionAsync('highlight')
