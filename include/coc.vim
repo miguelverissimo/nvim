@@ -19,6 +19,7 @@ let g:coc_global_extensions = [
 \   'coc-prettier',
 \   'coc-elixir',
 \   'coc-pairs',
+\   'coc-rust-analyzer'
 \ ]
 
 autocmd CursorHold * silent call CocActionAsync('highlight')

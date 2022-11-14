@@ -6,7 +6,7 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Color schemes {
-Plug 'w0ng/vim-hybrid'
+" Plug 'w0ng/vim-hybrid'
 " Plug 'miguelverissimo/dracula_pro_vim'
 " Plug 'rafi/awesome-vim-colorschemes'
 " Plug 'tyrannicaltoucan/vim-deep-space'
@@ -20,8 +20,9 @@ Plug 'w0ng/vim-hybrid'
 " Plug 'hardcoreplayers/oceanic-material'
 " Plug 'jnurmine/zenburn'
 " Plug 'artanikin/vim-synthwave84'
+" Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 Plug 'sainnhe/everforest'
-Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
+" Plug 'arcticicestudio/nord-vim'
 " }
 
 " NERDTree {
@@ -66,7 +67,7 @@ Plug 'junegunn/vim-peekaboo'
 
 " Editing -- Text manipulation helpers {
 " (Un-)comment code
-Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-gommentary'
 
 " Multiple cursors
 " Plug 'terryma/vim-multiple-cursors'
