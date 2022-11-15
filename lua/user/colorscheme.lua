@@ -1,8 +1,7 @@
 vim.g.syntax_on = true
-vim.o.termguicolors = true
 vim.o.background = 'dark'
 
-vim.g.everforest_background = "hard"
+vim.g.everforest_background = "medium"
 local colorscheme = "everforest"
 
 -- vim.g.material_style = "deep ocean"

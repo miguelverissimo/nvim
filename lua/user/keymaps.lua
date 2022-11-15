@@ -71,6 +71,10 @@ keymap("n", "<c-_>", "<Plug>CommentaryLine", opts)
 keymap("n", "<C-p>", "<cmd>Telescope find_files hidden=true<CR>", opts)
 keymap("n", "<leader>ss", "<cmd>Telescope live_grep<CR>", opts)
 
+-- NvimTreeToggle
+keymap("n", "\\", "<cmd>NvimTreeToggle<CR>", opts)
+keymap("n", "|", "<cmd>NvimTreeFindFile<CR>", opts)
+
 -- Insert --
 -- Press jk fast to exit insert mode 
 keymap("i", "jk", "<ESC>", opts)
