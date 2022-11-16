@@ -120,7 +120,7 @@ Plug 'tommcdo/vim-exchange'
 " project configuration via 'projections'
 Plug 'tpope/vim-projectionist'
 
-" automatically adjusts 'shiftwidth' and 'expandtab' heuristically based on the current file
+" automatically adjusts 'shiftwidth' and 'expgndtab' heuristically based on the current file
 Plug 'tpope/vim-sleuth'
 
 " easily search for, substitute, and abbreviate multiple variants of a word

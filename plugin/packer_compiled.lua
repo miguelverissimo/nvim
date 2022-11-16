@@ -271,16 +271,6 @@ _G.packer_plugins = {
     path = "/home/miguel/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["tmux.vim"] = {
-    loaded = true,
-    path = "/home/miguel/.local/share/nvim/site/pack/packer/start/tmux.vim",
-    url = "https://github.com/keith/tmux.vim"
-  },
-  ["tmuxline.vim"] = {
-    loaded = true,
-    path = "/home/miguel/.local/share/nvim/site/pack/packer/start/tmuxline.vim",
-    url = "https://github.com/edkolev/tmuxline.vim"
-  },
   ["toggleterm.nvim"] = {
     loaded = true,
     path = "/home/miguel/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
@@ -319,6 +309,11 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/home/miguel/.local/share/nvim/site/pack/packer/opt/vim-cucumber",
     url = "https://github.com/tpope/vim-cucumber"
+  },
+  ["vim-dispatch"] = {
+    loaded = true,
+    path = "/home/miguel/.local/share/nvim/site/pack/packer/start/vim-dispatch",
+    url = "https://github.com/tpope/vim-dispatch"
   },
   ["vim-elixir"] = {
     loaded = true,
@@ -389,20 +384,35 @@ _G.packer_plugins = {
     path = "/home/miguel/.local/share/nvim/site/pack/packer/start/vim-repeat",
     url = "https://github.com/tpope/vim-repeat"
   },
+  ["vim-ruby"] = {
+    loaded = true,
+    path = "/home/miguel/.local/share/nvim/site/pack/packer/start/vim-ruby",
+    url = "https://github.com/vim-ruby/vim-ruby"
+  },
   ["vim-surround"] = {
     loaded = true,
     path = "/home/miguel/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
   },
+  ["vim-tmux"] = {
+    loaded = true,
+    path = "/home/miguel/.local/share/nvim/site/pack/packer/start/vim-tmux",
+    url = "https://github.com/tmux-plugins/vim-tmux"
+  },
+  ["vim-tmux-focus-events"] = {
+    loaded = true,
+    path = "/home/miguel/.local/share/nvim/site/pack/packer/start/vim-tmux-focus-events",
+    url = "https://github.com/tmux-plugins/vim-tmux-focus-events"
+  },
+  ["vim-tmux-navigator"] = {
+    loaded = true,
+    path = "/home/miguel/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
+    url = "https://github.com/christoomey/vim-tmux-navigator"
+  },
   ["vim-visual-multi"] = {
     loaded = true,
     path = "/home/miguel/.local/share/nvim/site/pack/packer/start/vim-visual-multi",
     url = "https://github.com/mg979/vim-visual-multi"
-  },
-  vimux = {
-    loaded = true,
-    path = "/home/miguel/.local/share/nvim/site/pack/packer/start/vimux",
-    url = "https://github.com/benmills/vimux"
   },
   ["which-key.nvim"] = {
     loaded = true,
@@ -420,10 +430,10 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
+vim.cmd [[au FileType rake ++once lua require("packer.load")({'vim-rake', 'vim-rails', 'vim-bundler'}, { ft = "rake" }, _G.packer_plugins)]]
 vim.cmd [[au FileType rust ++once lua require("packer.load")({'rust.vim'}, { ft = "rust" }, _G.packer_plugins)]]
-vim.cmd [[au FileType ruby ++once lua require("packer.load")({'vim-bundler', 'vim-rails', 'vim-rake'}, { ft = "ruby" }, _G.packer_plugins)]]
-vim.cmd [[au FileType rake ++once lua require("packer.load")({'vim-bundler', 'vim-rails', 'vim-rake'}, { ft = "rake" }, _G.packer_plugins)]]
 vim.cmd [[au FileType cucumber ++once lua require("packer.load")({'vim-cucumber'}, { ft = "cucumber" }, _G.packer_plugins)]]
+vim.cmd [[au FileType ruby ++once lua require("packer.load")({'vim-rake', 'vim-rails', 'vim-bundler'}, { ft = "ruby" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]

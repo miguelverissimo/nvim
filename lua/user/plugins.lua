@@ -49,6 +49,7 @@ return packer.startup(function(use)
   use { "kyazdani42/nvim-tree.lua", requires = { 'nvim-tree/nvim-web-devicons' } }
   use { "moll/vim-bbye" }
   use { "nvim-lualine/lualine.nvim" }
+  -- use { "kassio/neoterm" }
   use { "akinsho/toggleterm.nvim" }
   use { "ahmedkhalf/project.nvim" }
   use { "lewis6991/impatient.nvim" }
@@ -65,6 +66,7 @@ return packer.startup(function(use)
   -- Testing
   -- use { "janko/vim-test" }
   use { "klen/nvim-test" }
+  use { "tpope/vim-dispatch" }
 
   -- Comments
   use { "tpope/vim-commentary" }
@@ -85,12 +87,16 @@ return packer.startup(function(use)
   use { "matze/vim-move" }
 
   -- interact with tmux ???????????
-  use { "benmills/vimux" }
-  use { "keith/tmux.vim" }
-  use { "edkolev/tmuxline.vim" }
+  -- use { "benmills/vimux" }
+  -- use { "keith/tmux.vim" }
+  -- use { "edkolev/tmuxline.vim" }
+  use { "tmux-plugins/vim-tmux" }
+  use { "tmux-plugins/vim-tmux-focus-events" }
+  use { "christoomey/vim-tmux-navigator" }
 
   -- Ruby
   use { "keith/rspec.vim" }
+  use { "vim-ruby/vim-ruby" }
   use { "tpope/vim-bundler", ft = { "ruby", "rake" } }
   use { "tpope/vim-cucumber", ft = { "cucumber" } }
   use { "tpope/vim-rails", ft = { "ruby", "rake" } }

@@ -17,10 +17,10 @@ null_ls.setup({
     formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
     formatting.black.with({ extra_args = { "--fast" } }),
     formatting.stylua,
-    formatting.rubocop,
     formatting.eslint,
+    formatting.rubocop,
+
     diagnostics.rubocop
-    -- diagnostics.flake8
   },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then
@@ -29,10 +29,10 @@ null_ls.setup({
         group = augroup,
         buffer = bufnr,
         callback = function()
-          -- vor nvim < 0.8
+          -- for nvim < 0.8
           -- vim.lsp.buf.formatting_sync()
           -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-          vim.lsp.buf.format({ bufnr = bufnr })
+          vim.lsp.buf.formatting({ bufnr = bufnr })
         end,
       })
     end

@@ -9,7 +9,7 @@ nvim_test.setup({
   commands_create = true,     -- create commands (TestFile, TestLast, ...)
   filename_modifier = ":.",   -- modify filenames before tests run(:h filename-modifiers)
   silent = false,             -- less notifications
-  term = "toggleterm",          -- a terminal to run ("terminal"|"toggleterm")
+  term = "vimux",          -- a terminal to run ("terminal"|"toggleterm")
   termOpts = {
     direction = "vertical",   -- terminal's direction ("horizontal"|"vertical"|"float")
     width = 96,               -- terminal's width (for vertical|float)

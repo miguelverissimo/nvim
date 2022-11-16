@@ -173,6 +173,15 @@ local mappings = {
   },
 
   t = {
+    name = "Test",
+    t = { "<cmd>TestNearest<CR>", "Test nearest" },
+    f = { "<cmd>TestFile<CR>", "Test file" },
+    l = { "<cmd>TestLast<CR>", "Test last" },
+    s = { "<cmd>TestSuite<CR>", "Test suite" },
+    g = { "<cmd>TestVisit<CR>", "Test visit" },
+  },
+
+  T = {
     name = "Terminal",
     r = { "<cmd>lua _RAILS_C_TOGGLE()<cr>", "Rails Console" },
     g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "Lazygit" },

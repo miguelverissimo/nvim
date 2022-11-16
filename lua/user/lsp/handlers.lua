@@ -39,6 +39,9 @@ M.setup = function()
       header = "",
       prefix = "",
     },
+    flags = {
+      debounce_text_changes = 150,
+    },
   }
 
   vim.diagnostic.config(config)
@@ -73,7 +76,6 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-  vim.notify(client.name)
   if client.name == "tsserver" then
     -- nvim < 0.8
     -- client.server_capabilities.document_formatting = false
@@ -82,6 +84,13 @@ M.on_attach = function(client, bufnr)
   end
 
   if client.name == "sumneko_lua" then
+    -- nvim < 0.8
+    -- client.server_capabilities.document_formatting = false
+    -- nvim >= 0.8
+    client.server_capabilities.documentFormattingProvider = false
+  end
+
+  if client.name == "solargraph" then
     -- nvim < 0.8
     -- client.server_capabilities.document_formatting = false
     -- nvim >= 0.8
