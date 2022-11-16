@@ -46,10 +46,10 @@ function _LAZYGIT_TOGGLE()
 	lazygit:toggle()
 end
 
-local node = Terminal:new({ cmd = "node", hidden = true })
+local rails_c = Terminal:new({ cmd = "rails c", hidden = true })
 
-function _NODE_TOGGLE()
-	node:toggle()
+function _RAILS_C_TOGGLE()
+	rails_c:toggle()
 end
 
 local ncdu = Terminal:new({ cmd = "ncdu", hidden = true })

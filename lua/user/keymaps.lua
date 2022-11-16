@@ -1,7 +1,5 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
-
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
@@ -75,8 +73,26 @@ keymap("n", "<leader>ss", "<cmd>Telescope live_grep<CR>", opts)
 keymap("n", "\\", "<cmd>NvimTreeToggle<CR>", opts)
 keymap("n", "|", "<cmd>NvimTreeFindFile<CR>", opts)
 
+-- Grepper
+keymap("n", "<leader>sg", ":Grepper<CR>", opts)
+
+-- Trouble
+keymap("n", "<leader>xx", "<cmd>TroubleToggle<cr>", opts)
+keymap("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
+keymap("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", opts)
+keymap("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", opts)
+keymap("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", opts)
+keymap("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", opts)
+
+-- Harpoon
+keymap("n", "<leader>h", [[<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>]], opts)
+keymap("n", "<leader>hm", [[<cmd>lua require("harpoon.mark").add_file()<CR>]], opts)
+keymap("n", "<leader>hn", [[<cmd>lua require("harpoon.ui").nav_next()<CR>]], opts)
+keymap("n", "<leader>hp", [[<cmd>lua require("harpoon.ui").nav_prev()<CR>]], opts)
+keymap("n", "<leader>ht", [[<cmd>lua require("harpoon.tmux").gotoTerminal("{bottom-left}")<CR>]], opts)
+
 -- Insert --
--- Press jk fast to exit insert mode 
+-- Press jk fast to exit insert mode
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
 
@@ -117,6 +133,9 @@ keymap("x", "<c-_>", "<Plug>Commentary", opts)
 -- Object --
 -- Commentary (also set in nmap and xmap)
 keymap("o", "<c-_>", "<Plug>Commentary", opts)
+
+
+-- local term_opts = { silent = true }
 
 -- Terminal --
 -- Better terminal navigation

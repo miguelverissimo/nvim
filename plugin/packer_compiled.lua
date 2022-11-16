@@ -94,11 +94,6 @@ _G.packer_plugins = {
     path = "/home/miguel/.local/share/nvim/site/pack/packer/start/alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
   },
-  ["close-buffers.nvim"] = {
-    loaded = true,
-    path = "/home/miguel/.local/share/nvim/site/pack/packer/start/close-buffers.nvim",
-    url = "https://github.com/kazhala/close-buffers.nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/miguel/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -158,6 +153,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/miguel/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  harpoon = {
+    loaded = true,
+    path = "/home/miguel/.local/share/nvim/site/pack/packer/start/harpoon",
+    url = "https://github.com/ThePrimeagen/harpoon"
   },
   ["impatient.nvim"] = {
     loaded = true,
@@ -286,6 +286,11 @@ _G.packer_plugins = {
     path = "/home/miguel/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
+  ["trouble.nvim"] = {
+    loaded = true,
+    path = "/home/miguel/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    url = "https://github.com/folke/trouble.nvim"
+  },
   ["vim-bbye"] = {
     loaded = true,
     path = "/home/miguel/.local/share/nvim/site/pack/packer/start/vim-bbye",
@@ -330,6 +335,11 @@ _G.packer_plugins = {
     path = "/home/miguel/.local/share/nvim/site/pack/packer/start/vim-endwise",
     url = "https://github.com/tpope/vim-endwise"
   },
+  ["vim-grepper"] = {
+    loaded = true,
+    path = "/home/miguel/.local/share/nvim/site/pack/packer/start/vim-grepper",
+    url = "https://github.com/mhinz/vim-grepper"
+  },
   ["vim-illuminate"] = {
     loaded = true,
     path = "/home/miguel/.local/share/nvim/site/pack/packer/start/vim-illuminate",
@@ -354,6 +364,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/miguel/.local/share/nvim/site/pack/packer/start/vim-obsession",
     url = "https://github.com/tpope/vim-obsession"
+  },
+  ["vim-projectionist"] = {
+    loaded = true,
+    path = "/home/miguel/.local/share/nvim/site/pack/packer/start/vim-projectionist",
+    url = "https://github.com/tpope/vim-projectionist"
   },
   ["vim-rails"] = {
     loaded = false,
@@ -405,19 +420,19 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType cucumber ++once lua require("packer.load")({'vim-cucumber'}, { ft = "cucumber" }, _G.packer_plugins)]]
+vim.cmd [[au FileType rust ++once lua require("packer.load")({'rust.vim'}, { ft = "rust" }, _G.packer_plugins)]]
 vim.cmd [[au FileType ruby ++once lua require("packer.load")({'vim-bundler', 'vim-rails', 'vim-rake'}, { ft = "ruby" }, _G.packer_plugins)]]
 vim.cmd [[au FileType rake ++once lua require("packer.load")({'vim-bundler', 'vim-rails', 'vim-rake'}, { ft = "rake" }, _G.packer_plugins)]]
-vim.cmd [[au FileType rust ++once lua require("packer.load")({'rust.vim'}, { ft = "rust" }, _G.packer_plugins)]]
+vim.cmd [[au FileType cucumber ++once lua require("packer.load")({'vim-cucumber'}, { ft = "cucumber" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]
-time([[Sourcing ftdetect script at: /home/miguel/.local/share/nvim/site/pack/packer/opt/vim-cucumber/ftdetect/cucumber.vim]], true)
-vim.cmd [[source /home/miguel/.local/share/nvim/site/pack/packer/opt/vim-cucumber/ftdetect/cucumber.vim]]
-time([[Sourcing ftdetect script at: /home/miguel/.local/share/nvim/site/pack/packer/opt/vim-cucumber/ftdetect/cucumber.vim]], false)
 time([[Sourcing ftdetect script at: /home/miguel/.local/share/nvim/site/pack/packer/opt/rust.vim/ftdetect/rust.vim]], true)
 vim.cmd [[source /home/miguel/.local/share/nvim/site/pack/packer/opt/rust.vim/ftdetect/rust.vim]]
 time([[Sourcing ftdetect script at: /home/miguel/.local/share/nvim/site/pack/packer/opt/rust.vim/ftdetect/rust.vim]], false)
+time([[Sourcing ftdetect script at: /home/miguel/.local/share/nvim/site/pack/packer/opt/vim-cucumber/ftdetect/cucumber.vim]], true)
+vim.cmd [[source /home/miguel/.local/share/nvim/site/pack/packer/opt/vim-cucumber/ftdetect/cucumber.vim]]
+time([[Sourcing ftdetect script at: /home/miguel/.local/share/nvim/site/pack/packer/opt/vim-cucumber/ftdetect/cucumber.vim]], false)
 vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
