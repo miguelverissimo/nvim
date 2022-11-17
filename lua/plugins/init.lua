@@ -136,6 +136,11 @@ return packer.startup(function(use)
     config = function() require("plugins.config.incline") end,
   }
 
+  -- Multiple cursors
+  use {
+    "mg979/vim-visual-multi"
+  }
+
   -----------------------------------------------------------------------------
   -- Navigation
   -----------------------------------------------------------------------------
@@ -414,6 +419,12 @@ return packer.startup(function(use)
    -- Move lines and selections
   use {
     "matze/vim-move"
+  }
+
+  -- Grepper
+  use {
+    "mhinz/vim-grepper",
+    config = function() require("plugins.config.grepper") end
   }
 
   -- Profiling and Performance

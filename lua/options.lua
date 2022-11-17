@@ -8,8 +8,10 @@ local options = {
   conceallevel = 0, -- so that `` is visible in markdown files
   cursorline = true, -- highlight the current line
   expandtab = true, -- convert tabs to spaces
-  foldlevelstart = 20,
-  foldmethod = "indent",
+  foldenable = true,
+  foldlevel = 0,
+  foldlevelstart = 99,
+  foldmethod = "syntax",
   icm = "split",
   ignorecase = false, -- ignore case in search patterns
   laststatus = 3, -- Universal status bar
@@ -37,7 +39,7 @@ local options = {
   ttimeoutlen = 250,
   undofile = true, -- enable persistent undo
   updatetime = 100, -- faster completion (4000ms default)
-  wrap = true, -- display lines as one long line
+  wrap = false, -- display lines as one long line
   writebackup = false, -- if a file is being edited by another program
 }
 

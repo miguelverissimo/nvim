@@ -64,6 +64,8 @@ M.bindings = {
     l = { "<cmd>lua require('gitlinker').get_buf_range_url('n', { action_callback = require('gitlinker.actions').open_in_browser })<cr>", "Git Link" }
   },
 
+  ["i"] = { "<cmd>IndentBlanklineToggle<cr>", "Toggle indent lines" },
+
   l = {
     name = "LSP",
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
@@ -127,13 +129,6 @@ M.bindings = {
 
   t = {
     name = "Test",
-    --[[ a = { "<cmd>lua require('neotest').run.attach()<cr>", "Attach" }, ]]
-    --[[ f = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Run All" }, ]]
-    --[[ l = { "<cmd>lua require('neotest').run.run_last()<cr>", "Run Last" }, ]]
-    --[[ t = { "<cmd>lua require('neotest').run.run()<cr>", "Run Nearest" }, ]]
-    --[[ o = { "<cmd>lua require('neotest').output.open({ enter = true })<cr>", "Output" }, ]]
-    --[[ S = { "<cmd>lua require('neotest').run.stop()<cr>", "Stop" }, ]]
-    --[[ s = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Summary" }, ]]
     t = { "<cmd>TestNearest<cr><cr>", "Test Nearest" },
     f = { "<cmd>TestFile<cr><cr>", "Test File" },
     l = { "<cmd>TestLast<cr>", "Test Last" },
@@ -141,6 +136,13 @@ M.bindings = {
     e = { "<cmd>TestEdit<cr>", "Edit tests for current file" },
     i = { "<cmd>TestInfo<cr>", "Plugin info" },
     s = { "<cmd>TestSuite<cr>", "Test full suite" },
+    A = { "<cmd>lua require('neotest').run.attach()<cr>", "NeoTest Attach" },
+    F = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "NeoTest Run All" },
+    L = { "<cmd>lua require('neotest').run.run_last()<cr>", "NeoTest Run Last" },
+    T = { "<cmd>lua require('neotest').run.run()<cr>", "NeoTest Run Nearest" },
+    O = { "<cmd>lua require('neotest').output.open({ enter = true })<cr>", "NeoTest Output" },
+    X = { "<cmd>lua require('neotest').run.stop()<cr>", "NeoTest Stop" },
+    S = { "<cmd>lua require('neotest').summary.toggle()<cr>", "NeoTest Summary" },
   },
 
   x = {
