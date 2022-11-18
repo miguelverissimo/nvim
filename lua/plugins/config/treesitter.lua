@@ -21,6 +21,8 @@ local languages = {
   "scss",
   "toml",
   "yaml",
+  "glimmer",
+  "nix",
 }
 
 configs.setup({

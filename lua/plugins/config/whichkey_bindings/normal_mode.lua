@@ -147,7 +147,7 @@ M.bindings = {
 
   x = {
     name = "Trouble",
-    x = { "<cmd>Trouble<cr>", "Open" },
+    x = { "<cmd>TroubleToggle<cr>", "Toggle" },
     w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
     d = { "<cmd>Trouble document_diagnostics<cr>", "Document Diagnostics" },
     l = { "<cmd>Trouble loclist<cr>", "Loclist" },
