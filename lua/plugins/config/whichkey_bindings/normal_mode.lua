@@ -24,10 +24,8 @@ M.bindings = {
     ["9"] = { "<Cmd>BufferLineGoToBuffer 9<CR>", "Goto Buffer 9" },
   },
 
-  c = {
-    name = "Scratch Pad",
-    c = { "<cmd>ScratchPad<cr>", "Toggle" },
-  },
+  ['C'] = { "<cmd>ScratchPad<cr>", "Toggle Scratch Pad" },
+  ['c'] = { "<cmd>noh<cr>", "Remove highlighting" },
 
   f = {
     name = "Find",
@@ -36,7 +34,8 @@ M.bindings = {
     c = { "<cmd>Telescope commands<cr>", "Commands" },
     d = { "<cmd>Telescope find_dotfiles<cr>", "Dotfiles" },
     e = { "<cmd>RnvimrToggle<CR>", "Ranger" },
-    f = { "<cmd>lua require('telescope').extensions.file_browser.file_browser({ previewer = false, })<cr>", "File Browser" },
+    f = { "<cmd>lua require('telescope').extensions.file_browser.file_browser({ previewer = false, })<cr>",
+      "File Browser" },
     g = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
     h = { "<cmd>Telescope help_tags<cr>", "Help" },
     i = { "<cmd>Telescope highlights<cr>", "Highlights" },
@@ -61,7 +60,8 @@ M.bindings = {
     Q = { "<cmd>GitConflictListQf<cr>", "Quicklist" },
     ["]"] = { "<cmd>GitConflictNextConflict<cr>", "Next" },
     ["["] = { "<cmd>GitConflictPrevConflict<cr>", "Previous" },
-    l = { "<cmd>lua require('gitlinker').get_buf_range_url('n', { action_callback = require('gitlinker.actions').open_in_browser })<cr>", "Git Link" }
+    l = { "<cmd>lua require('gitlinker').get_buf_range_url('n', { action_callback = require('gitlinker.actions').open_in_browser })<cr>",
+      "Git Link" }
   },
 
   ["i"] = { "<cmd>IndentBlanklineToggle<cr>", "Toggle indent lines" },
@@ -69,34 +69,22 @@ M.bindings = {
   l = {
     name = "LSP",
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-    d = {
-      "<cmd>Telescope diagnostics bufnr=0<cr>",
-      "Document Diagnostics",
-    },
-    w = {
-      "<cmd>Telescope diagnostics<cr>",
-      "Workspace Diagnostics",
-    },
+    d = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Document Diagnostics" },
     f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
     i = { "<cmd>LspInfo<cr>", "Info" },
-    I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
-    j = {
-      "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
-      "Next Diagnostic",
-    },
-    k = {
-      "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
-      "Prev Diagnostic",
-    },
+    j = { "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", "Next Diagnostic" },
+    k = { "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
     l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+    m = { "<cmd>Mason<cr>", "Mason installer" },
+    n = { "<cmd>NullLsInfo<cr>", "Null-ls info" },
     q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
     r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-    S = {
-      "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-      "Workspace Symbols",
-    },
+    S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
+    w = { "<cmd>Telescope diagnostics<cr>", "Workspace Diagnostics" },
   },
+
+  ["n"] = { "<cmd>Alpha<cr>", "Show startup screen" },
 
   p = {
     name = "Plugins",
@@ -119,12 +107,13 @@ M.bindings = {
 
   s = {
     name = "System",
-    f = { "<cmd>echo &filetype<cr>", "Filetype" },
-    r = { "<cmd>luafile %<cr> <cmd>lua vim.notifier.info('Sourced file')<cr>", "Source file" },
-    x = { "<cmd>cd %:p:h<cr>", "Change Directory" },
     e = { "!!$SHELL<CR>", "Execute Shell" },
+    f = { "<cmd>echo &filetype<cr>", "Filetype" },
+    g = { "<cmd>Grepper<cr>", "Grepper" },
+    r = { "<cmd>luafile %<cr> <cmd>lua vim.notifier.info('Sourced file')<cr>", "Source file" },
+    s = { "<cmd>Telescope live_grep<cr>", "Telescope live grep" },
+    x = { "<cmd>cd %:p:h<cr>", "Change Directory" },
     w = { "<cmd>update!<CR>", "Save" },
-    q = { "<cmd>q!<CR>", "Quit" },
   },
 
   t = {
@@ -143,6 +132,12 @@ M.bindings = {
     O = { "<cmd>lua require('neotest').output.open({ enter = true })<cr>", "NeoTest Output" },
     X = { "<cmd>lua require('neotest').run.stop()<cr>", "NeoTest Stop" },
     S = { "<cmd>lua require('neotest').summary.toggle()<cr>", "NeoTest Summary" },
+  },
+
+  v = {
+    name = "Splits",
+    h = { "<cmd>split<cr>", "Horizontal split" },
+    v = { "<cmd>vsplit<cr>", "Vertical split" },
   },
 
   x = {

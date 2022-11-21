@@ -9,11 +9,11 @@ local filename = {
 lualine.setup({
   options = {
     icons_enabled = true,
-    -- theme = 'gruvbox-material',
+    --[[ theme = 'oceanic-material', ]]
     component_separators = { left = "\\", right = "/" },
     section_separators = { left = "", right = "" },
     disabled_filetypes = { "NvimTree", "alpha", "Ranger" },
-    globalstatus = true,
+    globalstatus = false,
     always_divide_middle = true,
   },
   sections = {
@@ -43,4 +43,3 @@ lualine.setup({
   tabline = {},
   extensions = {}
 })
-

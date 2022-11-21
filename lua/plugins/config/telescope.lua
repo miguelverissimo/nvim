@@ -22,7 +22,6 @@ local sorters = require("telescope.sorters")
 -- <C-s>/s	Toggle all entries ignoring ./ and ../
 
 telescope.load_extension("file_browser", { grouped = true })
-telescope.load_extension("fzf") -- require fzf extension for better fzf sorting algorithm
 telescope.setup({
   pickers = {
     buffers = {
@@ -78,13 +77,13 @@ telescope.setup({
     borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
     color_devicons = true,
     use_less = true,
-    path_display = { "smart" },
     file_previewer = previewers.vim_buffer_cat.new,
     grep_previewer = previewers.vim_buffer_vimgrep.new,
     qflist_previewer = previewers.vim_buffer_qflist.new,
     extensions = {
       fzf = {
-        override_generic_sorter = false,
+        fuzzy = true,
+        override_generic_sorter = true,
         override_file_sorter = true,
         case_mode = "smart_case"
       },
@@ -95,3 +94,6 @@ telescope.setup({
   }
 })
 
+-- To get fzf loaded and working with telescope, you need to call
+-- load_extension, somewhere after setup function:
+telescope.load_extension("fzf")

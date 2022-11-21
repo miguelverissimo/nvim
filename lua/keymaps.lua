@@ -48,14 +48,7 @@ keymap("n", "oo", "o<Esc>k", opts)
 keymap("n", "OO", "O<Esc>j", opts)
 
 -- Remove highlighting
-keymap("n", "<leader>c", "<cmd>noh<cr>", opts)
 keymap("n", "<Esc><Esc>", ":<C-u>nohlsearch<CR>", opts)
-
--- Ctrl-c to esc
-keymap("i", "<C-c>", "<esc>", opts)
-
--- Escape in normal mode seems to tab
-keymap("n", "<esc>", "<NOP>", opts)
 
 -- Navigate quicklist items
 keymap("n", "gn", "<cmd>cnext<cr>", opts)
@@ -66,10 +59,6 @@ keymap("n", "tl", ":tabnext<CR>", opts)
 keymap("n", "th", ":tabprev<CR>", opts)
 keymap("n", "tn", ":tabnew<CR>", opts)
 keymap("n", "tc", ":tabclose<CR>", opts)
-
--- Quicker splits
-keymap("n", "<leader>vv", ":vsplit<CR>", opts)
-keymap("n", "<leader>vh", ":split<CR>", opts)
 
 -- Copy to EOL
 keymap("n", "Y", "y$", opts)
@@ -116,24 +105,10 @@ keymap("n", "<M-Right>", ":vertical resize +2<CR>", opts)
 
 -- Telescope
 keymap("n", "<C-p>", "<cmd>Telescope find_files hidden=true<CR>", opts)
-keymap("n", "<leader>ss", "<cmd>Telescope live_grep<CR>", opts)
 
 -- NvimTreeToggle
 keymap("n", "\\", "<cmd>NvimTreeToggle<CR>", opts)
 keymap("n", "|", "<cmd>NvimTreeFindFile<CR>", opts)
 
--- Grepper
-keymap("n", "<leader>sg", ":Grepper<CR>", opts)
-
 -- Trouble
-keymap("n", "<leader>xx", "<cmd>TroubleToggle<cr>", opts)
-keymap("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
-keymap("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", opts)
-keymap("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", opts)
-keymap("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", opts)
 keymap("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", opts)
-
--- Commentary (also set in nmap and xmap)
---[[ keymap("n", "<c-_>", "<Plug>CommentaryLine", opts) ]]
---[[ keymap("x", "<c-_>", "<Plug>Commentary", opts) ]]
---[[ keymap("o", "<c-_>", "<Plug>Commentary", opts) ]]

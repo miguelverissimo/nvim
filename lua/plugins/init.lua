@@ -91,17 +91,12 @@ return packer.startup(function(use)
   }
 
   use {
-    "echasnovski/mini.nvim",
-    config = function() require("mini.tabline").setup() end,
-    branch = "main"
-  }
-
-  use {
     "nvim-lualine/lualine.nvim",
     config = function() require("plugins.config.lualine") end,
     event = "VimEnter",
   }
 
+  -- Colorscheme
   use {
     "rmehri01/onenord.nvim",
     config = function() require("plugins.config.theme") end,
@@ -166,9 +161,45 @@ return packer.startup(function(use)
   -----------------------------------------------------------------------------
   -- LSP
   -----------------------------------------------------------------------------
+  -- Manage LSPs, linters, DAP servers, formatters, etc.
+  use({
+    "williamboman/mason.nvim",
+    config = function() require("lsp.mason") end,
+    requires = {
+      { "williamboman/mason-lspconfig.nvim" },
+      { "neovim/nvim-lspconfig" },
+    }
+  })
+
+  -- LSP/completion/snippet all in one
+  use({
+    "VonHeikemen/lsp-zero.nvim",
+    requires = {
+      -- LSP Support
+      { "neovim/nvim-lspconfig" },
+      { "williamboman/mason.nvim" },
+      { "williamboman/mason-lspconfig.nvim" },
+
+      -- Autocompletion
+      { "hrsh7th/nvim-cmp" },
+      { "hrsh7th/cmp-buffer" },
+      { "hrsh7th/cmp-path" },
+      { "saadparwaiz1/cmp_luasnip" },
+      { "hrsh7th/cmp-nvim-lsp" },
+      { "hrsh7th/cmp-nvim-lua" },
+
+      -- Snippets
+      { "L3MON4D3/LuaSnip" },
+      { "rafamadriz/friendly-snippets" },
+    },
+    config = function() require("lsp.lsp-zero") end
+  })
+
+  -- Null-ls
   use {
-    "williamboman/nvim-lsp-installer",
-    requires = { "neovim/nvim-lspconfig" },
+    "jose-elias-alvarez/null-ls.nvim",
+    config = function() require("lsp.null-ls") end,
+    requires = { "nvim-lua/plenary.nvim" },
   }
 
   use {
@@ -252,6 +283,7 @@ return packer.startup(function(use)
   use "tpope/vim-rails"
   use "vim-ruby/vim-ruby"
   use "mtdl9/vim-log-highlighting"
+  use "tpope/vim-endwise"
 
   use {
     "cuducos/yaml.nvim",
@@ -355,7 +387,7 @@ return packer.startup(function(use)
     config = function() require("nvim-surround").setup() end
   })
 
-  -- Replace with register and don"t copy
+  -- Replace with register and don't copy
   use {
     "vim-scripts/ReplaceWithRegister",
     event = "BufEnter",
@@ -406,6 +438,7 @@ return packer.startup(function(use)
     event = "BufEnter",
   }
 
+  -- Floating terminal
   use {
     "akinsho/toggleterm.nvim",
     config = function() require("plugins.config.toggleterm") end
@@ -416,7 +449,7 @@ return packer.startup(function(use)
     config = function() require("nvim-autopairs").setup() end
   }
 
-   -- Move lines and selections
+  -- Move lines and selections
   use {
     "matze/vim-move"
   }

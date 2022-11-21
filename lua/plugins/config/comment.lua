@@ -2,9 +2,7 @@ local status_ok, comment = pcall(require, "Comment")
 if not status_ok then return end
 
 local ts_context_ok, ts_context = pcall(require, "ts_context_commentstring")
-if not ts_context_ok then
-  return
-end
+if not ts_context_ok then return end
 
 comment.setup {
   pre_hook = function(ctx)
@@ -22,7 +20,10 @@ comment.setup {
       location = location,
     }
   end,
+  opleader = {
+    line = "<c-_>",
+  },
   toggler = {
-    line = "<C-_>"
+    line = "<c-_>",
   }
 }

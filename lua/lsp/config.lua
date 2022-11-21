@@ -1,21 +1,3 @@
--- local status_ok, mason = pcall(require, "mason")
--- if not status_ok then return end
---
--- mason.setup()
---
--- require("mason-lspconfig").setup({
---   ensure_installed = {
---     "bashls",
---     "cssls",
---     "html",
---     "jsonls",
---     "solargraph",
---     "sumneko_lua",
---     "tsserver",
---     "yamlls",
---   },
--- })
-
 local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
 if not status_ok then
   return
@@ -51,8 +33,7 @@ else
   lspconfig.sumneko_lua.setup(vim.tbl_deep_extend("force", require("lsp.settings.sumneko_lua"), defaults))
 end
 
-local servers = lsp_installer.get_installed_servers()
-
+--[[ local servers = lsp_installer.get_installed_servers() ]]
 
 lspconfig.solargraph.setup(vim.tbl_deep_extend("force", require("lsp.settings.solargraph"), defaults))
 lspconfig.jsonls.setup(vim.tbl_deep_extend("force", require("lsp.settings.jsonls"), defaults))

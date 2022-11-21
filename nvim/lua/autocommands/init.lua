@@ -1,8 +1,0 @@
-load "autocommands.general"
-load "autocommands.ruby"
-load "autocommands.editing"
-load "autocommands.git"
-load "autocommands.formatting"
-load "autocommands.alpha"
-load "autocommands.skhd"
-load "autocommands.indent_line"
