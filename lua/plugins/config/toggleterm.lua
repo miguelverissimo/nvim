@@ -1,11 +1,12 @@
 local status_ok, toggleterm = pcall(require, "toggleterm")
 if not status_ok then return end
 
-toggleterm.setup()
 
 local Terminal = require("toggleterm.terminal").Terminal
 local colors = require("config.colors").colors
+
 local defaults = {
+  open_mapping = [[<M-\>]],
   direction = "float",
   float_opts = {
     border = "single",
@@ -21,6 +22,8 @@ local defaults = {
     },
   },
 }
+
+toggleterm.setup(defaults)
 
 local lazygit = Terminal:new(vim.tbl_deep_extend("force", {
   cmd = "lazygit -ucd ~/.config/lazygit/",
@@ -55,4 +58,10 @@ local htop = Terminal:new(vim.tbl_deep_extend("force", {
 
 function _toggle_htop()
   htop:toggle()
+end
+
+local shell = Terminal:new(vim.tbl_deep_extend("force", {}, defaults))
+
+function _toggle_shell()
+  shell:toggle()
 end

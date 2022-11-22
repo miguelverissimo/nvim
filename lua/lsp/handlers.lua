@@ -13,10 +13,11 @@ M.setup = function()
   end
 
   vim.diagnostic.config({
-    virtual_text = {
-      source = "if_many", -- Or "if_many"
-      prefix = '●', -- Could be '■', '▎', 'x'
-    },
+    --[[ virtual_text = { ]]
+    --[[   source = "if_many", -- Or "if_many" ]]
+    --[[   prefix = '●', -- Could be '■', '▎', 'x' ]]
+    --[[ }, ]]
+    virtual_text = false,
     signs = { active = signs },
     update_in_insert = true,
     underline = true,
@@ -28,6 +29,11 @@ M.setup = function()
       source = "always",
       header = "",
       prefix = "",
+    },
+
+    -- provided by vim_lines
+    virtual_lines = {
+      only_current_line = true,
     },
   })
 

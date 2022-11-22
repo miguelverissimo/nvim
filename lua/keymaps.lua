@@ -28,9 +28,6 @@ vim.g.maplocalleader = " "
 -- Save with enter
 keymap("n", "<CR>", ":w<CR>", opts)
 
--- Map ctrl-c to esc
-keymap("i", "<C-c>", "<esc>", opts)
-
 -- Use Del key for black hole register
 keymap("", "<Del>", '"_x', opts)
 
@@ -51,8 +48,8 @@ keymap("n", "OO", "O<Esc>j", opts)
 keymap("n", "<Esc><Esc>", ":<C-u>nohlsearch<CR>", opts)
 
 -- Navigate quicklist items
-keymap("n", "gn", "<cmd>cnext<cr>", opts)
-keymap("n", "gp", "<cmd>cprev<cr>", opts)
+keymap("n", "gn", "<cmd>cnext<CR>", opts)
+keymap("n", "gp", "<cmd>cprev<CR>", opts)
 
 -- Navigate tabs
 keymap("n", "tl", ":tabnext<CR>", opts)
@@ -64,7 +61,7 @@ keymap("n", "tc", ":tabclose<CR>", opts)
 keymap("n", "Y", "y$", opts)
 
 -- ESC to clear search
-keymap("n", "<esc>", ":noh<CR>", opts)
+keymap("n", "<Esc>", ":noh<CR>", opts)
 
 -- Move text up and down
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
@@ -111,4 +108,4 @@ keymap("n", "\\", "<cmd>NvimTreeToggle<CR>", opts)
 keymap("n", "|", "<cmd>NvimTreeFindFile<CR>", opts)
 
 -- Trouble
-keymap("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", opts)
+keymap("n", "gR", "<cmd>TroubleToggle lsp_references<CR>", opts)

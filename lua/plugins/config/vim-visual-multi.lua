@@ -1,0 +1,10 @@
+--[[ vim.g['VM_maps'] = {} ]]
+--[[ local vm_maps = vim.g['VM_maps'] ]]
+--[[]]
+--[[ vm_maps['Select Cursor Up'] = '<c-9>' ]]
+--[[ vm_maps['Select Cursor Down'] = '<c-0>' ]]
+
+vim.cmd[[let g:VM_mouse_mappings = 1]]
+vim.cmd[[let g:VM_maps = {}]]
+vim.cmd[[let g:VM_maps["Select Cursor Down"] = '<M-r>']]
+vim.cmd[[let g:VM_maps["Select Cursor Up"]   = '(']]

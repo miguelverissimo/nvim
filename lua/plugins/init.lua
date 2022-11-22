@@ -13,18 +13,14 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]])
-
 -- Use a protected call so we don"t error out on first use
 local status_ok, packer = pcall(require, "packer")
-if not status_ok then return end
+if not status_ok then
+  vim.notify("problem with packer!")
+  return
+end
 
+-- Autocommand that reloads neovim whenever you save the plugins/init.lua file
 vim.api.nvim_create_augroup("_packer_user_config", { clear = true })
 vim.api.nvim_create_autocmd("BufWritePost", {
   group = "_packer_user_config",
@@ -37,6 +33,9 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 
 -- Have packer use a popup window
 packer.init {
+  log = {
+    level = "warn"
+  },
   profile = {
     enable = true,
     threshold = 0, -- the amount in ms that a plugins load time must be over for it to be included in the profile
@@ -133,7 +132,8 @@ return packer.startup(function(use)
 
   -- Multiple cursors
   use {
-    "mg979/vim-visual-multi"
+    "mg979/vim-visual-multi",
+    --[[ config = function() require("plugins.config.vim-visual-multi") end, ]]
   }
 
   -----------------------------------------------------------------------------
@@ -202,16 +202,23 @@ return packer.startup(function(use)
     requires = { "nvim-lua/plenary.nvim" },
   }
 
+  -- LSP progress indicator
   use {
     "j-hui/fidget.nvim",
     config = function() require("plugins.config.fidget") end,
     event = "BufReadPre",
-  } -- LSP progress indicator
+  }
 
   use {
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
     config = function() require("plugins.config.trouble") end,
+    event = "BufEnter",
+  }
+
+  use {
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    config = function() require("lsp_lines").setup() end,
     event = "BufEnter",
   }
 

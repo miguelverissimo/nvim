@@ -1,10 +1,19 @@
 M = {}
 
 M.bindings = {
-  ["a"] = { "<cmd>Alpha<cr>", "Startup Screen" },
-  ["`"] = { "<cmd>Telescope<cr>", "Telescope" },
-  ["-"] = { ":split<CR>", "Horizonal Split" },
-  ['\\'] = { ":vsplit<CR>", "Vertical Split" },
+  ["`"] = {
+    name = "Telescope",
+    ["`"] = { "<cmd>Telescope<cr>", "Telescope" },
+    n = { "<cmd>Telescope notify<cr>", "Notify messages log" },
+  },
+
+  a = {
+    name = "AutoSession",
+    ["?"] = { "<cmd>Autosession search<cr>", "Search session" },
+    D = { "<cmd>Autosession delete<cr>", "Delete session" },
+    r = { "<cmd>RestoreSession<cr>", "Restore session" },
+    s = { "<cmd>SaveSession<cr>", "Save session" },
+  },
 
   b = {
     name = "Buffer",
@@ -81,6 +90,7 @@ M.bindings = {
     r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
     S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
+    t = { "<cmd>lua require('lsp_lines').toggle()<cr>", "Toggle diagnostics virtual text" },
     w = { "<cmd>Telescope diagnostics<cr>", "Workspace Diagnostics" },
   },
 
@@ -158,10 +168,11 @@ M.bindings = {
 
   z = {
     name = "Terminal",
-    l = { "<cmd>:lua _toggle_lazygit()<CR>", "Lazygit" },
-    c = { "<cmd>:lua _toggle_console()<CR>", "Rails Console" },
-    i = { "<cmd>:lua _toggle_irb()<CR>", "IRB" },
-    h = { "<cmd>:lua _toggle_htop()<CR>", "htop" },
+    l = { "<cmd>:lua _toggle_lazygit()<cr>", "Lazygit" },
+    c = { "<cmd>:lua _toggle_console()<cr>", "Rails Console" },
+    i = { "<cmd>:lua _toggle_irb()<cr>", "IRB" },
+    h = { "<cmd>:lua _toggle_htop()<cr>", "htop" },
+    z = { "<cmd>:lua _toggle_shell()<cr>", "Open terminal" }
   },
 }
 

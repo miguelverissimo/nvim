@@ -20,7 +20,7 @@
 -- s to open a file with default system application or a folder with default file manager (if you want to change the command used to do it see :h nvim-tree.setup under system_open)
 -- if the file is a directory, <CR> will open the directory otherwise it will open the file in the buffer near the tree
 -- if the file is a symlink, <CR> will follow the symlink (if the target is a file)
--- <C-v> will open the file in a vertical split
+-- <v> will open the file in a vertical split
 -- <C-x> will open the file in a horizontal split
 -- <C-t> will open the file in a new tab
 -- <Tab> will open the file as a preview (keeps the cursor in the tree)
