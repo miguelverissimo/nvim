@@ -319,8 +319,8 @@ return packer.startup(function(use)
   }
 
   use {
-    "klen/nvim-test",
-    config = function() require("plugins.config.nvim-test") end
+    "vim-test/vim-test",
+    config = function() require("plugins.config.vim-test") end
   }
 
   use {
@@ -376,6 +376,7 @@ return packer.startup(function(use)
   use "tmux-plugins/vim-tmux"
   use "tmux-plugins/vim-tmux-focus-events"
   use "christoomey/vim-tmux-navigator"
+  use "preservim/vimux"
 
   -----------------------------------------------------------------------------
   -- Misc
@@ -465,6 +466,12 @@ return packer.startup(function(use)
   use {
     "mhinz/vim-grepper",
     config = function() require("plugins.config.grepper") end
+  }
+
+  -- Adds Reject, Keep and Restore commands in the quickfix/location list/window
+  use {
+    "romainl/vim-qf",
+    config = function() require("plugins.config.vim-qf") end
   }
 
   -- Profiling and Performance

@@ -96,8 +96,8 @@ M.on_attach = function(client, bufnr)
       group = augroup,
       buffer = bufnr,
       callback = function()
+        vim.notify('Autoformatting')
         lsp_formatting(bufnr)
-        vim.lsp.buf.format({ bufnr = bufnr })
       end,
     })
   end

@@ -36,7 +36,8 @@ M.bindings = {
   ['C'] = { "<cmd>ScratchPad<cr>", "Toggle Scratch Pad" },
   ['c'] = { "<cmd>noh<cr>", "Remove highlighting" },
 
-  f = {
+  f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format file" },
+  F = {
     name = "Find",
     a = { "<cmd>Telescope autocommands<cr>", "Autocommands" },
     b = { "<cmd>Telescope buffers<cr>", "Buffers" },
@@ -108,11 +109,12 @@ M.bindings = {
 
   r = {
     name = "Refactoring",
+    b = { [[ <Cmd>lua require('refactoring').refactor('Extract Block')<CR>]], "Extract Block" },
     e = { [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]], "Extract Function" },
     f = { [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>]], "Extract Function to File" },
-    v = { [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>]], "Extract Variable" },
     i = { [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]], "Inline Variable" },
-    b = { [[ <Cmd>lua require('refactoring').refactor('Extract Block')<CR>]], "Extract Block" },
+    r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+    v = { [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>]], "Extract Variable" },
   },
 
   s = {

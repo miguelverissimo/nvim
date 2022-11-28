@@ -10,10 +10,6 @@ lsp_zero.setup_nvim_cmp({
       keyword_length = 3,
     },
     {
-      name = 'nvim_lsp',
-      keyword_length = 3,
-    },
-    {
       name = "buffer",
       keyword_length = 3,
       sorting = {
@@ -26,12 +22,14 @@ lsp_zero.setup_nvim_cmp({
         }
       },
       option = {
-        -- indexing_interval = "Satan",
-        -- get_bufnrs = 666,
         get_bufnrs = function()
           return vim.api.nvim_list_bufs()
         end,
       }
+    },
+    {
+      name = 'nvim_lsp',
+      keyword_length = 3,
     },
     {
       name = 'path',

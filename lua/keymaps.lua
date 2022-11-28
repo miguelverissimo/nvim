@@ -44,6 +44,9 @@ keymap("v", "<S-Tab>", "<gv", opts)
 keymap("n", "oo", "o<Esc>k", opts)
 keymap("n", "OO", "O<Esc>j", opts)
 
+-- ESC to clear search
+keymap("n", "<Esc>", ":noh<CR>", opts)
+
 -- Remove highlighting
 keymap("n", "<Esc><Esc>", ":<C-u>nohlsearch<CR>", opts)
 
@@ -60,8 +63,6 @@ keymap("n", "tc", ":tabclose<CR>", opts)
 -- Copy to EOL
 keymap("n", "Y", "y$", opts)
 
--- ESC to clear search
-keymap("n", "<Esc>", ":noh<CR>", opts)
 
 -- Move text up and down
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)

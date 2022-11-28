@@ -24,5 +24,6 @@ local sources = {
 }
 
 null_ls.setup {
-  sources = sources
+  sources = sources,
+  default_timeout = 7500,
 }
