@@ -17,20 +17,21 @@ M.bindings = {
 
   b = {
     name = "Buffer",
-    --[[ c = { "<Cmd>close<Cr>", "Close split" }, ]]
-    w = { "<Cmd>bd!<Cr>", "Close current" },
-    D = { "<Cmd>%bd|e#|bd#<Cr>", "Delete all" },
+    --[[ c = { "<cmd>close<cr>", "Close split" }, ]]
+    w = { "<cmd>bd!<cr>", "Close current" },
+    --[[ D = { "<cmd>%bd|e#|bd#<cr>", "Delete all" }, ]]
+    D = { "<cmd>DeleteHiddenBuffers<cr>", "Delete all" },
     i = { "mpggVG=<esc>`p", "Indent" },
     c = { "<cmd>set tabstop=2 shiftwidth=2 expandtab | retab<cr>", "Convert tabs to spaces" },
-    ["1"] = { "<Cmd>BufferLineGoToBuffer 1<CR>", "Goto Buffer 1" },
-    ["2"] = { "<Cmd>BufferLineGoToBuffer 2<CR>", "Goto Buffer 2" },
-    ["3"] = { "<Cmd>BufferLineGoToBuffer 3<CR>", "Goto Buffer 3" },
-    ["4"] = { "<Cmd>BufferLineGoToBuffer 4<CR>", "Goto Buffer 4" },
-    ["5"] = { "<Cmd>BufferLineGoToBuffer 5<CR>", "Goto Buffer 5" },
-    ["6"] = { "<Cmd>BufferLineGoToBuffer 6<CR>", "Goto Buffer 6" },
-    ["7"] = { "<Cmd>BufferLineGoToBuffer 7<CR>", "Goto Buffer 7" },
-    ["8"] = { "<Cmd>BufferLineGoToBuffer 8<CR>", "Goto Buffer 8" },
-    ["9"] = { "<Cmd>BufferLineGoToBuffer 9<CR>", "Goto Buffer 9" },
+    ["1"] = { "<cmd>BufferLineGoToBuffer 1<cr>", "Goto Buffer 1" },
+    ["2"] = { "<cmd>BufferLineGoToBuffer 2<cr>", "Goto Buffer 2" },
+    ["3"] = { "<cmd>BufferLineGoToBuffer 3<cr>", "Goto Buffer 3" },
+    ["4"] = { "<cmd>BufferLineGoToBuffer 4<cr>", "Goto Buffer 4" },
+    ["5"] = { "<cmd>BufferLineGoToBuffer 5<cr>", "Goto Buffer 5" },
+    ["6"] = { "<cmd>BufferLineGoToBuffer 6<cr>", "Goto Buffer 6" },
+    ["7"] = { "<cmd>BufferLineGoToBuffer 7<cr>", "Goto Buffer 7" },
+    ["8"] = { "<cmd>BufferLineGoToBuffer 8<cr>", "Goto Buffer 8" },
+    ["9"] = { "<cmd>BufferLineGoToBuffer 9<cr>", "Goto Buffer 9" },
   },
 
   ['C'] = { "<cmd>ScratchPad<cr>", "Toggle Scratch Pad" },
@@ -43,7 +44,7 @@ M.bindings = {
     b = { "<cmd>Telescope buffers<cr>", "Buffers" },
     c = { "<cmd>Telescope commands<cr>", "Commands" },
     d = { "<cmd>Telescope find_dotfiles<cr>", "Dotfiles" },
-    e = { "<cmd>RnvimrToggle<CR>", "Ranger" },
+    e = { "<cmd>RnvimrToggle<cr>", "Ranger" },
     f = { "<cmd>lua require('telescope').extensions.file_browser.file_browser({ previewer = false, })<cr>",
       "File Browser" },
     g = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
@@ -60,7 +61,7 @@ M.bindings = {
 
   g = {
     name = "Git",
-    b = { "<cmd>Gitsigns toggle_current_line_blame<CR>", "Blame" },
+    b = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Blame" },
     d = { "<cmd>DiffviewOpen<cr>", "Diff View Open" },
     D = { "<cmd>DiffviewClose<cr>", "Diff View Close" },
     O = { "<cmd>GitConflictChooseOurs<cr>", "Ours" },
@@ -82,7 +83,7 @@ M.bindings = {
     d = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Document Diagnostics" },
     f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
     i = { "<cmd>LspInfo<cr>", "Info" },
-    j = { "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", "Next Diagnostic" },
+    j = { "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>", "Next Diagnostic" },
     k = { "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
     l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
     m = { "<cmd>Mason<cr>", "Mason installer" },
@@ -98,6 +99,12 @@ M.bindings = {
   ["n"] = { "<cmd>Alpha<cr>", "Show startup screen" },
 
   p = {
+    name = "Pomodoro",
+    s = { "<cmd>PomodoroStart<cr>", "Start" },
+    S = { "<cmd>PomodoroStop<cr>", "Stop" },
+  },
+
+  P = {
     name = "Plugins",
     i = { "<cmd>PackerInstall<cr>", "Install" },
     c = { "<cmd>PackerCompile<cr>", "Compile" },
@@ -109,23 +116,23 @@ M.bindings = {
 
   r = {
     name = "Refactoring",
-    b = { [[ <Cmd>lua require('refactoring').refactor('Extract Block')<CR>]], "Extract Block" },
-    e = { [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]], "Extract Function" },
-    f = { [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>]], "Extract Function to File" },
-    i = { [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]], "Inline Variable" },
+    b = { [[ <Cmd>lua require('refactoring').refactor('Extract Block')<cr>]], "Extract Block" },
+    e = { [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<cr>]], "Extract Function" },
+    f = { [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<cr>]], "Extract Function to File" },
+    i = { [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<cr>]], "Inline Variable" },
     r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-    v = { [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>]], "Extract Variable" },
+    v = { [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<cr>]], "Extract Variable" },
   },
 
   s = {
     name = "System",
-    e = { "!!$SHELL<CR>", "Execute Shell" },
+    e = { "!!$SHELL<cr>", "Execute Shell" },
     f = { "<cmd>echo &filetype<cr>", "Filetype" },
-    g = { "<cmd>Grepper<cr>", "Grepper" },
+    g = { "<cmd>silent! Grepper<cr>", "Grepper" },
     r = { "<cmd>luafile %<cr> <cmd>lua vim.notifier.info('Sourced file')<cr>", "Source file" },
     s = { "<cmd>Telescope live_grep<cr>", "Telescope live grep" },
     x = { "<cmd>cd %:p:h<cr>", "Change Directory" },
-    w = { "<cmd>update!<CR>", "Save" },
+    w = { "<cmd>update!<cr>", "Save" },
   },
 
   t = {

@@ -19,7 +19,7 @@ lualine.setup({
   sections = {
     lualine_a = { "mode" },
     lualine_b = { 'branch' },
-    lualine_c = { 'diff', require("lsp-status").status },
+    lualine_c = { 'diff', require("lsp-status").status, require("pomodoro").statusline },
     lualine_x = {
       {
         require("noice").api.statusline.mode.get,

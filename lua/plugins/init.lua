@@ -342,6 +342,14 @@ return packer.startup(function(use)
     config = function() require("neodev").setup() end
   }
 
+  -- folds
+  --[[ use { ]]
+  --[[   "kevinhwang91/nvim-ufo", ]]
+  --[[   requires = { ]]
+  --[[     "kevinhwang91/promise-async" ]]
+  --[[   } ]]
+  --[[ } ]]
+
   -----------------------------------------------------------------------------
   -- Git
   -----------------------------------------------------------------------------
@@ -379,8 +387,42 @@ return packer.startup(function(use)
   use "preservim/vimux"
 
   -----------------------------------------------------------------------------
+  -- Debugging
+  -----------------------------------------------------------------------------
+
+  --[[ use { ]]
+  --[[   "mfussenegger/nvim-dap", ]]
+  --[[   config = function() require("plugins.config.nvim-dap") end, ]]
+  --[[ } ]]
+  --[[]]
+  --[[ use { ]]
+  --[[   "suketa/nvim-dap-ruby", ]]
+  --[[   config = function() require("dap-ruby").setup() end, ]]
+  --[[   requires = { ]]
+  --[[     "mfussenegger/nvim-dap" ]]
+  --[[   } ]]
+  --[[ } ]]
+  --[[]]
+  --[[ use { ]]
+  --[[   "rcarriga/nvim-dap-ui", ]]
+  --[[   config = function() require("plugins.config.nvim-dap-ui") end, ]]
+  --[[   requires = { ]]
+  --[[     "mfussenegger/nvim-dap" ]]
+  --[[   } ]]
+  --[[ } ]]
+
+  -----------------------------------------------------------------------------
   -- Misc
   -----------------------------------------------------------------------------
+
+  -- Pomodoro
+  use {
+    "wthollingsworth/pomodoro.nvim",
+    requires = {
+      "MunifTanjim/nui.nvim"
+    },
+    config = function() require("plugins.config.pomodoro") end,
+  }
 
   -- Better quick list
   use {
