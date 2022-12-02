@@ -61,7 +61,8 @@ M.bindings = {
 
   g = {
     name = "Git",
-    b = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Blame" },
+    b = { "<cmd>Git blame<cr>", "Blame file" },
+    l = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Blame line" },
     d = { "<cmd>DiffviewOpen<cr>", "Diff View Open" },
     D = { "<cmd>DiffviewClose<cr>", "Diff View Close" },
     O = { "<cmd>GitConflictChooseOurs<cr>", "Ours" },
@@ -71,7 +72,7 @@ M.bindings = {
     Q = { "<cmd>GitConflictListQf<cr>", "Quicklist" },
     ["]"] = { "<cmd>GitConflictNextConflict<cr>", "Next" },
     ["["] = { "<cmd>GitConflictPrevConflict<cr>", "Previous" },
-    l = { "<cmd>lua require('gitlinker').get_buf_range_url('n', { action_callback = require('gitlinker.actions').open_in_browser })<cr>",
+    L = { "<cmd>lua require('gitlinker').get_buf_range_url('n', { action_callback = require('gitlinker.actions').open_in_browser })<cr>",
       "Git Link" }
   },
 

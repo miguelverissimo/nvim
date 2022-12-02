@@ -342,14 +342,6 @@ return packer.startup(function(use)
     config = function() require("neodev").setup() end
   }
 
-  -- folds
-  --[[ use { ]]
-  --[[   "kevinhwang91/nvim-ufo", ]]
-  --[[   requires = { ]]
-  --[[     "kevinhwang91/promise-async" ]]
-  --[[   } ]]
-  --[[ } ]]
-
   -----------------------------------------------------------------------------
   -- Git
   -----------------------------------------------------------------------------
@@ -376,6 +368,10 @@ return packer.startup(function(use)
     "ruifm/gitlinker.nvim",
     config = function() require("gitlinker").setup() end,
     requires = "nvim-lua/plenary.nvim",
+  }
+
+  use {
+    "tpope/vim-fugitive"
   }
 
   -----------------------------------------------------------------------------
