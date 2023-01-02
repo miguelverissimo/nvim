@@ -1,6 +1,6 @@
 local options = {
   scratchpad_autostart = 0,
-  scratchpad_location = "~/Personal/Dropbox/Documents/Scratchpad/scratchpad.md",
+  scratchpad_location = ".git/scratchpad.md",
   scratchpad_autofocus = 1,
   scratchpad_autosize = 0,
   scratchpad_minwidth = 60,

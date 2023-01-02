@@ -62,7 +62,7 @@ local options = {
 
   -- Visuals
   background = "dark",
-  cmdheight = 0, -- more space in the neovim command line for displaying messages
+  cmdheight = 2, -- more space in the neovim command line for displaying messages
   colorcolumn = "80,120",
   conceallevel = 0, -- so that `` is visible in markdown files
   cursorline = true, -- highlight the current line

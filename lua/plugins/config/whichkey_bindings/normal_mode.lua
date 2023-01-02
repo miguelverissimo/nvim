@@ -34,7 +34,7 @@ M.bindings = {
     ["9"] = { "<cmd>BufferLineGoToBuffer 9<cr>", "Goto Buffer 9" },
   },
 
-  ['C'] = { "<cmd>ScratchPad<cr>", "Toggle Scratch Pad" },
+  ['C'] = { "<cmd>silent! ScratchPad<cr>", "Toggle Scratch Pad" },
   ['c'] = { "<cmd>noh<cr>", "Remove highlighting" },
 
   f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format file" },
@@ -57,6 +57,8 @@ M.bindings = {
     s = { "<cmd>Telescope spell_suggest<cr>", "Spelling" },
     t = { "<cmd>NvimTreeToggle<cr>", "Tree Explorer" },
     w = { "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>", "Current Buffer" },
+    z = { '<cmd>lua require(\'telescope.builtin\').grep_string({search = vim.fn.expand("<cword>")})<cr>',
+      "Grep word under cursor" },
   },
 
   g = {
@@ -86,6 +88,7 @@ M.bindings = {
     i = { "<cmd>LspInfo<cr>", "Info" },
     j = { "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>", "Next Diagnostic" },
     k = { "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
+    K = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Show definition" },
     l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
     m = { "<cmd>Mason<cr>", "Mason installer" },
     n = { "<cmd>NullLsInfo<cr>", "Null-ls info" },

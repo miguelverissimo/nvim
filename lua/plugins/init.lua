@@ -95,10 +95,14 @@ return packer.startup(function(use)
     event = "VimEnter",
   }
 
-  -- Colorscheme
+  -- Colorschemes
   use {
     "rmehri01/onenord.nvim",
     config = function() require("plugins.config.theme") end,
+  }
+
+  use {
+    "RRethy/nvim-base16"
   }
 
   -- Add better vertical lines
@@ -410,6 +414,9 @@ return packer.startup(function(use)
   -----------------------------------------------------------------------------
   -- Misc
   -----------------------------------------------------------------------------
+
+  -- Wakatime
+  use 'wakatime/vim-wakatime'
 
   -- Pomodoro
   use {

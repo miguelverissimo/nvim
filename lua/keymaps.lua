@@ -111,6 +111,9 @@ keymap("n", "|", "<cmd>NvimTreeFindFile<CR>", opts)
 -- Trouble
 keymap("n", "gR", "<cmd>TroubleToggle lsp_references<CR>", opts)
 
+-- Grepper
+keymap("n", "gs", "<plug>(GrepperOperator)", opts)
+
 -- UFO
 --[[ keymap("n", "zR", "<cmd>lua require('ufo').openAllFolds<cr>", opts) ]]
 --[[ keymap("n", "zM", "<cmd>lua require('ufo').closeAllFolds<cr>", opts) ]]
