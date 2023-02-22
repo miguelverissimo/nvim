@@ -34,7 +34,6 @@ else
 end
 
 --[[ local servers = lsp_installer.get_installed_servers() ]]
-
 lspconfig.solargraph.setup(vim.tbl_deep_extend("force", require("lsp.settings.solargraph"), defaults))
 lspconfig.jsonls.setup(vim.tbl_deep_extend("force", require("lsp.settings.jsonls"), defaults))
 lspconfig.bashls.setup(defaults)
@@ -45,3 +44,8 @@ lspconfig.sqlls.setup(defaults)
 lspconfig.tsserver.setup(defaults)
 lspconfig.yamlls.setup(defaults)
 lspconfig.rust_analyzer.setup(vim.tbl_deep_extend("force", require("lsp.settings.rust_analyzer"), defaults))
+lspconfig.elixirls.setup {
+  cmd = { "$ELIXIR_LS_HOME/bin/elixir-ls" },
+  on_attach = on_attach,
+  capabilities = capabilities
+}

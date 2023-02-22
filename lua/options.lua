@@ -54,11 +54,13 @@ local options = {
 
   -- Folds
   foldenable = true,
-  --[[ foldcolumn = '1', -- Needed for nvim-ufo ]]
-  foldlevel = 0, -- Typically 0, but nvim-ufo needs a large value
+  fillchars = "fold: ",
+  foldlevel = 0,
   foldlevelstart = 99,
   foldmethod = "expr", -- Use together with foldexpr
   foldexpr = "nvim_treesitter#foldexpr()",
+  foldtext = 'v:lua.custom_fold_text()',
+  --[[ foldtext = \[\[substitute(getline(v:foldstart),'\\\\t',repeat('\\ ',&tabstop),'g').'...'.trim(getline(v:foldend)) . ' (' . (v:foldend - v:foldstart + 1) . ' lines)'\]\], ]]
 
   -- Visuals
   background = "dark",

@@ -10,19 +10,23 @@ local languages = {
   "bash",
   "comment",
   "dockerfile",
+  "eex",
+  "elixir",
+  "glimmer",
+  "heex",
   "html",
   "javascript",
   "json",
   "lua",
   "markdown",
   "markdown_inline",
+  "nix",
   "regex",
   "ruby",
+  "rust",
   "scss",
   "toml",
   "yaml",
-  "glimmer",
-  "nix",
 }
 
 configs.setup({
@@ -117,4 +121,3 @@ configs.setup({
     },
   },
 })
-

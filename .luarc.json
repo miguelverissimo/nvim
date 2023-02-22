@@ -72,6 +72,7 @@
         "/home/miguel/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
         "/home/miguel/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
         "/home/miguel/.local/share/nvim/site/pack/packer/start/vim-startuptime",
-        "${3rd}/luassert/library"
+        "${3rd}/luassert/library",
+        "${3rd}/luv/library"
     ]
 }
