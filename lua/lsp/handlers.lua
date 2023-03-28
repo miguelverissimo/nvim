@@ -74,7 +74,7 @@ local lsp_formatting = function(bufnr)
     filter = function(client)
       if client.name == "solargraph" then
         return true
-      elseif client.name == "sumneko_lua" then
+      elseif client.name == "lua_ls" then
         return true
       else
         vim.notify("buf.format client: " .. client.name)

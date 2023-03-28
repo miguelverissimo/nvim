@@ -221,7 +221,7 @@ function M.init()
   local lspkind = require("lspkind")
   local luasnip = require("luasnip")
 
-  -- Ignore warning msg "The same file is required" sumneko gives for the below
+  -- Ignore warning msg "The same file is required" lua_ls gives for the below
   -- requires statement. It is needed for the cmp completion window to pop up.
   require("plugins.cmp.luasnip").init()
 

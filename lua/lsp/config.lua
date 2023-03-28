@@ -6,7 +6,7 @@ end
 lsp_installer.setup {
   automatic_installation = true,
   ensure_installed = {
-    "sumneko_lua",
+    "lua_ls",
     "solargraph",
     "jsonls",
     "bashls",
@@ -28,9 +28,9 @@ local lspconfig = require("lspconfig")
 
 local luadev_ok, luadev = pcall(require, "lua-dev")
 if luadev_ok then
-  lspconfig.sumneko_lua.setup(luadev.setup(vim.tbl_deep_extend("force", require("lsp.settings.sumneko_lua"), defaults)))
+  lspconfig.lua_ls.setup(luadev.setup(vim.tbl_deep_extend("force", require("lsp.settings.lua_ls"), defaults)))
 else
-  lspconfig.sumneko_lua.setup(vim.tbl_deep_extend("force", require("lsp.settings.sumneko_lua"), defaults))
+  lspconfig.lua_ls.setup(vim.tbl_deep_extend("force", require("lsp.settings.lua_ls"), defaults))
 end
 
 --[[ local servers = lsp_installer.get_installed_servers() ]]
