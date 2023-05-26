@@ -98,12 +98,17 @@ return packer.startup(function(use)
   -- Colorschemes
   use {
     "rmehri01/onenord.nvim",
-    config = function() require("plugins.config.theme") end,
+    config = function() require("plugins.config.onenord_theme") end,
   }
 
-  use {
-    "RRethy/nvim-base16"
-  }
+  --[[ use { ]]
+  --[[   "RRethy/nvim-base16" ]]
+  --[[ } ]]
+  --[[]]
+  --[[ use { ]]
+  --[[   "rebelot/kanagawa.nvim", ]]
+  --[[   config = function() require("plugins.config.kanagawa_theme") end, ]]
+  --[[ } ]]
 
   -- Add better vertical lines
   use {
@@ -226,7 +231,7 @@ return packer.startup(function(use)
     event = "BufEnter",
   }
 
-  use "folke/lsp-colors.nvim" -- Add missing LSP highlight groups
+  use "folke/lsp-colors.nvim"    -- Add missing LSP highlight groups
   use "nvim-lua/lsp-status.nvim" -- Used by other plugins for basic lsp info
 
   -----------------------------------------------------------------------------
@@ -235,16 +240,16 @@ return packer.startup(function(use)
   use {
     "hrsh7th/nvim-cmp",
     requires = {
-      "hrsh7th/cmp-buffer", -- Buffer completions
-      "hrsh7th/cmp-path", -- Path completions
-      "hrsh7th/cmp-cmdline", -- Cmdline completions
-      "hrsh7th/cmp-nvim-lua", -- API completions
-      "hrsh7th/cmp-nvim-lsp", -- LSP completions
+      "hrsh7th/cmp-buffer",                   -- Buffer completions
+      "hrsh7th/cmp-path",                     -- Path completions
+      "hrsh7th/cmp-cmdline",                  -- Cmdline completions
+      "hrsh7th/cmp-nvim-lua",                 -- API completions
+      "hrsh7th/cmp-nvim-lsp",                 -- LSP completions
       "hrsh7th/cmp-nvim-lsp-document-symbol", -- For textDocument/documentSymbol
 
       -- Snippets
-      "saadparwaiz1/cmp_luasnip", -- snippet completions
-      "L3MON4D3/LuaSnip", --snippet engine
+      "saadparwaiz1/cmp_luasnip",     -- snippet completions
+      "L3MON4D3/LuaSnip",             --snippet engine
       "rafamadriz/friendly-snippets", -- a bunch of snippets to use
 
       -- Misc
@@ -410,7 +415,6 @@ return packer.startup(function(use)
   --[[     "mfussenegger/nvim-dap" ]]
   --[[   } ]]
   --[[ } ]]
-
   -----------------------------------------------------------------------------
   -- Misc
   -----------------------------------------------------------------------------
