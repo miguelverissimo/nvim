@@ -438,11 +438,11 @@ return packer.startup(function(use)
   }
 
   -- Wrap text
-  use({
-    "kylechui/nvim-surround",
-    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
-    config = function() require("nvim-surround").setup() end
-  })
+  --use({
+  --  "kylechui/nvim-surround",
+  --  tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+  --  config = function() require("nvim-surround").setup() end
+  --})
 
   -- Replace with register and don't copy
   use {
