@@ -246,6 +246,7 @@ return packer.startup(function(use)
       "hrsh7th/cmp-nvim-lua",                 -- API completions
       "hrsh7th/cmp-nvim-lsp",                 -- LSP completions
       "hrsh7th/cmp-nvim-lsp-document-symbol", -- For textDocument/documentSymbol
+      "onsails/lspkind.nvim",                 -- For Symbols
 
       -- Snippets
       "saadparwaiz1/cmp_luasnip",     -- snippet completions
@@ -256,7 +257,7 @@ return packer.startup(function(use)
       "lukas-reineke/cmp-under-comparator", -- Tweak completion order
       "f3fora/cmp-spell",
     },
-    config = function() require("plugins.config.cmp") end,
+    config = function() require("plugins.config.cmp").init() end,
     --event = "BufEnter",
   }
 

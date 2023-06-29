@@ -63,7 +63,6 @@ keymap("n", "tc", ":tabclose<CR>", opts)
 -- Copy to EOL
 keymap("n", "Y", "y$", opts)
 
-
 -- Move text up and down
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
