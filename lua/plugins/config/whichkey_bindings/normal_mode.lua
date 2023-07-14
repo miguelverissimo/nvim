@@ -11,8 +11,8 @@ M.bindings = {
     name = "AutoSession",
     ["?"] = { "<cmd>Autosession search<cr>", "Search session" },
     D = { "<cmd>Autosession delete<cr>", "Delete session" },
-    r = { "<cmd>RestoreSession<cr>", "Restore session" },
-    s = { "<cmd>SaveSession<cr>", "Save session" },
+    r = { "<cmd>SessionRestore<cr>", "Restore session" },
+    s = { "<cmd>SessionSave<cr>", "Save session" },
   },
 
   b = {
@@ -74,7 +74,8 @@ M.bindings = {
     Q = { "<cmd>GitConflictListQf<cr>", "Quicklist" },
     ["]"] = { "<cmd>GitConflictNextConflict<cr>", "Next" },
     ["["] = { "<cmd>GitConflictPrevConflict<cr>", "Previous" },
-    L = { "<cmd>lua require('gitlinker').get_buf_range_url('n', { action_callback = require('gitlinker.actions').open_in_browser })<cr>",
+    L = {
+      "<cmd>lua require('gitlinker').get_buf_range_url('n', { action_callback = require('gitlinker.actions').open_in_browser })<cr>",
       "Git Link" }
   },
 
