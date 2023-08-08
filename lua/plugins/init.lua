@@ -96,9 +96,20 @@ return packer.startup(function(use)
   }
 
   -- Colorschemes
+  --[[ use { ]]
+  --[[   "rmehri01/onenord.nvim", ]]
+  --[[   config = function() require("plugins.config.onenord_theme") end, ]]
+  --[[ } ]]
+
   use {
-    "rmehri01/onenord.nvim",
-    config = function() require("plugins.config.onenord_theme") end,
+    "catppuccin/nvim",
+    as = "catppuccin",
+    config = function()
+      require("catppuccin").setup({
+        flavour = "frappe"
+      })
+      vim.cmd.colorscheme("catppuccin")
+    end,
   }
 
   --[[ use { ]]
