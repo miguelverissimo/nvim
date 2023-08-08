@@ -24,6 +24,17 @@ local sorters = require("telescope.sorters")
 telescope.load_extension("file_browser", { grouped = true })
 telescope.setup({
   pickers = {
+    find_files = {
+      find_command = {
+        'fd',
+        '--type',
+        'f',
+        '--no-ignore-vcs',
+        '--color=never',
+        '--hidden',
+        '--follow',
+      }
+    },
     buffers = {
       show_all_buffers = true,
       sort_lastused = true,

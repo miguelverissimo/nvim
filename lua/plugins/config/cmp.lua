@@ -41,6 +41,7 @@ local kind_icons = {
   TypeParameter = ""
 }
 
+
 function M.init()
   if not packer_plugins["plenary.nvim"].loaded then
     vim.cmd([[packadd plenary.nvim]])
@@ -49,6 +50,54 @@ function M.init()
   local lspkind = require("lspkind")
   local luasnip = require("luasnip")
 
+  local mapping = {
+    ["<Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+        -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
+        -- they way you will only jump inside the snippet region
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      elseif has_words_before() then
+        cmp.complete()
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+
+    ["<S-Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+
+    ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+
+    ["<C-f>"] = cmp.mapping.scroll_docs(4),
+
+    ["<C-Space>"] = cmp.mapping(function(_)
+      return vim.fn.pumvisible() == 1 and cmp.close() or cmp.complete()
+    end),
+
+    ["<C-e>"] = cmp.mapping.close(),
+    --[[ ["<C-g>"] = cmp.mapping.confirm({ select = true }), ]]
+
+    ["<CR>"] = cmp.mapping({
+      i = function(fallback)
+        if cmp.visible() and cmp.get_active_entry() then
+          cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+        else
+          fallback()
+        end
+      end,
+      s = cmp.mapping.confirm({ select = true }),
+      c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+    }),
+  }
   -- Ignore warning msg "The same file is required" lua_ls gives for the below
   -- requires statement. It is needed for the cmp completion window to pop up.
   --[[ require("plugins.config.luasnip") ]]
@@ -80,54 +129,7 @@ function M.init()
       completeopt = "menu,menuone,noselect,noinsert",
       keyword_length = 2,
     },
-    mapping = {
-      ["<Tab>"] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.select_next_item()
-          -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
-          -- they way you will only jump inside the snippet region
-        elseif luasnip.expand_or_jumpable() then
-          luasnip.expand_or_jump()
-        elseif has_words_before() then
-          cmp.complete()
-        else
-          fallback()
-        end
-      end, { "i", "s" }),
-
-      ["<S-Tab>"] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.select_prev_item()
-        elseif luasnip.jumpable(-1) then
-          luasnip.jump(-1)
-        else
-          fallback()
-        end
-      end, { "i", "s" }),
-
-      ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-
-      ["<C-f>"] = cmp.mapping.scroll_docs(4),
-
-      ["<C-Space>"] = cmp.mapping(function(_)
-        return vim.fn.pumvisible() == 1 and cmp.close() or cmp.complete()
-      end),
-
-      ["<C-e>"] = cmp.mapping.close(),
-      --[[ ["<C-g>"] = cmp.mapping.confirm({ select = true }), ]]
-
-      ["<CR>"] = cmp.mapping({
-        i = function(fallback)
-          if cmp.visible() and cmp.get_active_entry() then
-            cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
-          else
-            fallback()
-          end
-        end,
-        s = cmp.mapping.confirm({ select = true }),
-        c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
-      }),
-    },
+    mapping = mapping,
     preselect = cmp.PreselectMode.None,
 
     sources = {
@@ -147,9 +149,8 @@ function M.init()
   })
 
   cmp.setup.cmdline("/", {
-    sources = {
-      { name = "buffer" },
-    },
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {},
   })
 
   --[[ cmp.setup.cmdline(":", { ]]

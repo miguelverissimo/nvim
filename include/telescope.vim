@@ -8,6 +8,8 @@ require("telescope").setup{
         ["<C-u>"] = false
       },
     },
+  },
+  pickers = {
   }
 }
 EOF
