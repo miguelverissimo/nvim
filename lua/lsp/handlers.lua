@@ -56,6 +56,8 @@ local function lsp_keymaps(bufnr)
   keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
   keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
   keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
+  keymap(bufnr, "n","<C-K>", "<cmd>vim.lsp.buf.signature_help()<cr>", opts)
+
   keymap(bufnr, "n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
   keymap(bufnr, "n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
   keymap(bufnr, "n", "<leader>li", "<cmd>LspInfo<cr>", opts)
@@ -86,6 +88,7 @@ local lsp_formatting = function(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
+
   -- if you want to set up formatting on save, you can use this as a callback
   local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 

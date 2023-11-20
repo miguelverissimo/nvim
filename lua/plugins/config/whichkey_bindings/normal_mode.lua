@@ -79,7 +79,15 @@ M.bindings = {
       "Git Link" }
   },
 
-  ["i"] = { "<cmd>IndentBlanklineToggle<cr>", "Toggle indent lines" },
+  h = {
+    name = "Harpoon",
+    h = {"<cmd>:lua require('harpoon.ui').toggle_quick_menu()<cr>", "Quick Menu"},
+    a = {"<cmd>:lua require('harpoon.mark').add_file()<cr>", "Add mark"},
+    o = {"<cmd>:lua require('harpoon.ui').nav_prev()<cr>", "Previous mark"},
+    i = {"<cmd>:lua require('harpoon.ui').nav_next()<cr>", "Next mark"},
+  },
+
+  ["i"] = { "<cmd>IBLToggle<cr>", "Toggle indent lines" },
 
   l = {
     name = "LSP",

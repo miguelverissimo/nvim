@@ -535,6 +535,12 @@ return packer.startup(function(use)
     config = function() require("plugins.config.vim-qf") end
   }
 
+  -- Harpoon
+  use {
+    "ThePrimeagen/harpoon",
+    requires = "nvim-lua/plenary.nvim",
+  }
+
   -- Profiling and Performance
   use "dstein64/vim-startuptime"
   use "lewis6991/impatient.nvim"
