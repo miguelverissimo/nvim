@@ -4,6 +4,8 @@ if not status_ok then return end
 local ts_context_ok, ts_context = pcall(require, "ts_context_commentstring")
 if not ts_context_ok then return end
 
+vim.g.skip_ts_context_commentstring_module = true
+
 comment.setup {
   pre_hook = function(ctx)
     local U = require 'Comment.utils'

@@ -30,10 +30,6 @@ local languages = {
 }
 
 configs.setup({
-  context_commentstring = {
-    enable = true,
-    enable_autocmd = false,
-  },
   ensure_installed = languages,
   indent = {
     enable = false
