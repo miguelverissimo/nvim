@@ -215,9 +215,9 @@ return packer.startup(function(use)
     config = function() require("lsp.lsp-zero") end
   })
 
-  -- Null-ls
+  -- none-ls - replaces Null-ls
   use {
-    "jose-elias-alvarez/null-ls.nvim",
+    "nvimtools/none-ls.nvim",
     config = function() require("lsp.null-ls") end,
     requires = { "nvim-lua/plenary.nvim" },
   }

@@ -29,7 +29,6 @@ telescope.setup({
         'fd',
         '--type',
         'f',
-        '--no-ignore-vcs',
         '--color=never',
         '--hidden',
         '--follow',

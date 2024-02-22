@@ -31,6 +31,9 @@ local languages = {
 
 configs.setup({
   ensure_installed = languages,
+  endwise = {
+    enable = true,
+  },
   indent = {
     enable = false
   },
