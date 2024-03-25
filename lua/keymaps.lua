@@ -6,6 +6,21 @@ local opts = { silent = true, noremap = true }
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
+-- Merge two tables
+local function mergeTables(t1, t2)
+  local merged = {}
+
+  for k, v in pairs(t1) do
+    merged[k] = v
+  end
+
+  for k, v in pairs(t2) do
+    merged[k] = v
+  end
+
+  return merged
+end
+
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
@@ -116,3 +131,7 @@ keymap("n", "gs", "<plug>(GrepperOperator)", opts)
 -- UFO
 --[[ keymap("n", "zR", "<cmd>lua require('ufo').openAllFolds<cr>", opts) ]]
 --[[ keymap("n", "zM", "<cmd>lua require('ufo').closeAllFolds<cr>", opts) ]]
+
+-- Github Copilot
+keymap("i", "<C-Right>", 'copilot#Accept("\\<CR>")', mergeTables(opts, { expr = true, replace_keycodes = false }))
+vim.g.copilot_no_tab_map = true

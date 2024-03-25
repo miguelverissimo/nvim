@@ -545,6 +545,9 @@ return packer.startup(function(use)
   use "dstein64/vim-startuptime"
   use "lewis6991/impatient.nvim"
 
+  --- Github copilot
+  use "github/copilot.vim"
+
   -----------------------------------------------------------------------------
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
