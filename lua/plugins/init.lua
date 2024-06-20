@@ -106,7 +106,7 @@ return packer.startup(function(use)
     as = "catppuccin",
     config = function()
       require("catppuccin").setup({
-        flavour = "frappe"
+        flavour = "frappe",
       })
       vim.cmd.colorscheme("catppuccin")
     end,
@@ -192,6 +192,11 @@ return packer.startup(function(use)
   })
 
   -- LSP/completion/snippet all in one
+  use({
+    "L3MON4D3/LuaSnip",
+    run = "make install_jsregexp"
+  })
+
   use({
     "VonHeikemen/lsp-zero.nvim",
     requires = {
@@ -328,12 +333,13 @@ return packer.startup(function(use)
 
   use {
     "nvim-neotest/neotest",
-    commit = "0be9899e859da147ad28c23a30a1df2081c16741",
+    --[[ commit = "0be9899e859da147ad28c23a30a1df2081c16741", ]]
     requires = {
-      "olimorris/neotest-rspec",
+      "nvim-neotest/nvim-nio",
       "nvim-lua/plenary.nvim",
+      "antoinemadec/FixCursorHold.nvim",
       "nvim-treesitter/nvim-treesitter",
-      "antoinemadec/FixCursorHold.nvim"
+      "olimorris/neotest-rspec"
     },
     config = function() require("plugins.config.neotest") end,
     event = "BufEnter",
@@ -547,6 +553,9 @@ return packer.startup(function(use)
 
   --- Github copilot
   use "github/copilot.vim"
+
+  --- Format on save
+  use "lukas-reineke/lsp-format.nvim"
 
   -----------------------------------------------------------------------------
   -- Automatically set up your configuration after cloning packer.nvim

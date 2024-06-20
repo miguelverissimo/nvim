@@ -27,7 +27,7 @@ neotest.setup({
     options = {}
   },
   highlights = {
-    adapater_name = "NeotestAdapterName",
+    adapter_name = "NeotestAdapterName",
     border = "NeotestBorder",
     dir = "NeotestDir",
     expand_marker = "NeotestExpandMarker",
@@ -92,4 +92,3 @@ neotest.setup({
     }
   }
 })
-

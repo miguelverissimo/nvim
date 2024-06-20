@@ -134,4 +134,6 @@ keymap("n", "gs", "<plug>(GrepperOperator)", opts)
 
 -- Github Copilot
 keymap("i", "<C-Right>", 'copilot#Accept("\\<CR>")', mergeTables(opts, { expr = true, replace_keycodes = false }))
+keymap("i", "<C-Left>", 'copilot#Cancel("\\<CR>")', mergeTables(opts, { expr = true, replace_keycodes = false }))
+keymap("i", "<A-Right>", "<Plug>(copilot-accept-word)", opts)
 vim.g.copilot_no_tab_map = true
