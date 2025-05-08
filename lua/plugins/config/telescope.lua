@@ -5,6 +5,7 @@ local actions = require("telescope.actions")
 local previewers = require("telescope.previewers")
 local trouble = require("trouble.providers.telescope")
 local sorters = require("telescope.sorters")
+local open_with_trouble = require("trouble.sources.telescope").open
 
 -- Filemanager shortcuts
 -- <A-c>/c	Create file/folder at current path (trailing path separator creates folder)
@@ -50,10 +51,10 @@ telescope.setup({
     mappings = {
       i = {
         ["<esc>"] = actions.close,
-        ["<c-t>"] = trouble.open_with_trouble,
+        ["<c-t>"] = open_with_trouble
       },
       n = {
-        ["<c-t>"] = trouble.open_with_trouble
+        ["<c-t>"] = open_with_trouble
       },
     },
     vimgrep_arguments = {
