@@ -34,8 +34,8 @@ M.bindings = {
     ["9"] = { "<cmd>BufferLineGoToBuffer 9<cr>", "Goto Buffer 9" },
   },
 
-  ['C'] = { "<cmd>silent! ScratchPad<cr>", "Toggle Scratch Pad" },
-  ['c'] = { "<cmd>noh<cr>", "Remove highlighting" },
+  ["C"] = { "<cmd>silent! ScratchPad<cr>", "Toggle Scratch Pad" },
+  ["c"] = { "<cmd>noh<cr>", "Remove highlighting" },
 
   f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format file" },
   F = {
@@ -45,8 +45,10 @@ M.bindings = {
     c = { "<cmd>Telescope commands<cr>", "Commands" },
     d = { "<cmd>Telescope find_dotfiles<cr>", "Dotfiles" },
     e = { "<cmd>RnvimrToggle<cr>", "Ranger" },
-    f = { "<cmd>lua require('telescope').extensions.file_browser.file_browser({ previewer = false, })<cr>",
-      "File Browser" },
+    f = {
+      "<cmd>lua require('telescope').extensions.file_browser.file_browser({ previewer = false, })<cr>",
+      "File Browser",
+    },
     g = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
     h = { "<cmd>Telescope help_tags<cr>", "Help" },
     i = { "<cmd>Telescope highlights<cr>", "Highlights" },
@@ -57,8 +59,10 @@ M.bindings = {
     s = { "<cmd>Telescope spell_suggest<cr>", "Spelling" },
     t = { "<cmd>NvimTreeToggle<cr>", "Tree Explorer" },
     w = { "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>", "Current Buffer" },
-    z = { '<cmd>lua require(\'telescope.builtin\').grep_string({search = vim.fn.expand("<cword>")})<cr>',
-      "Grep word under cursor" },
+    z = {
+      "<cmd>lua require('telescope.builtin').grep_string({search = vim.fn.expand(\"<cword>\")})<cr>",
+      "Grep word under cursor",
+    },
   },
 
   g = {
@@ -76,15 +80,16 @@ M.bindings = {
     ["["] = { "<cmd>GitConflictPrevConflict<cr>", "Previous" },
     L = {
       "<cmd>lua require('gitlinker').get_buf_range_url('n', { action_callback = require('gitlinker.actions').open_in_browser })<cr>",
-      "Git Link" }
+      "Git Link",
+    },
   },
 
   h = {
     name = "Harpoon",
-    h = {"<cmd>:lua require('harpoon.ui').toggle_quick_menu()<cr>", "Quick Menu"},
-    a = {"<cmd>:lua require('harpoon.mark').add_file()<cr>", "Add mark"},
-    o = {"<cmd>:lua require('harpoon.ui').nav_prev()<cr>", "Previous mark"},
-    i = {"<cmd>:lua require('harpoon.ui').nav_next()<cr>", "Next mark"},
+    h = { "<cmd>:lua require('harpoon.ui').toggle_quick_menu()<cr>", "Quick Menu" },
+    a = { "<cmd>:lua require('harpoon.mark').add_file()<cr>", "Add mark" },
+    o = { "<cmd>:lua require('harpoon.ui').nav_prev()<cr>", "Previous mark" },
+    i = { "<cmd>:lua require('harpoon.ui').nav_next()<cr>", "Next mark" },
   },
 
   ["i"] = { "<cmd>IBLToggle<cr>", "Toggle indent lines" },
@@ -131,7 +136,10 @@ M.bindings = {
     name = "Refactoring",
     b = { [[ <Cmd>lua require('refactoring').refactor('Extract Block')<cr>]], "Extract Block" },
     e = { [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<cr>]], "Extract Function" },
-    f = { [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<cr>]], "Extract Function to File" },
+    f = {
+      [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<cr>]],
+      "Extract Function to File",
+    },
     i = { [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<cr>]], "Inline Variable" },
     r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
     v = { [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<cr>]], "Extract Variable" },
@@ -194,7 +202,7 @@ M.bindings = {
     c = { "<cmd>:lua _toggle_console()<cr>", "Rails Console" },
     i = { "<cmd>:lua _toggle_irb()<cr>", "IRB" },
     h = { "<cmd>:lua _toggle_htop()<cr>", "htop" },
-    z = { "<cmd>:lua _toggle_shell()<cr>", "Open terminal" }
+    z = { "<cmd>:lua _toggle_shell()<cr>", "Open terminal" },
   },
 }
 

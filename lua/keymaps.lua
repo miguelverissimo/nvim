@@ -1,6 +1,4 @@
-------------------------------------------------------------------------------
--- General Keybindings, not plugin specific
--------------------------------------------------------------------------------
+--
 local opts = { silent = true, noremap = true }
 
 -- Shorten function name
@@ -34,17 +32,8 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Turn off arrow keys - force HJKL
---[[ keymap("n", "<UP>", "<NOP>", opts) ]]
---[[ keymap("n", "<DOWN>", "<NOP>", opts) ]]
---[[ keymap("n", "<LEFT>", "<NOP>", opts) ]]
---[[ keymap("n", "<RIGHT>", "<NOP>", opts) ]]
-
 -- Save with enter
 keymap("n", "<CR>", ":w<CR>", opts)
-
--- Use Del key for black hole register
-keymap("", "<Del>", '"_x', opts)
 
 -- Paste over selected text
 keymap("v", "p", '"_dP', opts)
@@ -86,54 +75,25 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
--------------------------------------------------------------------------------
--- Buffers
--------------------------------------------------------------------------------
--- Delete buffer
---[[ keymap("n", "<c-w>", ":bd<CR>", opts) ]]
-
--- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
-
--------------------------------------------------------------------------------
--- Splits
--------------------------------------------------------------------------------
--- Better window navigation
-keymap("n", "<C-Left>", "<C-w>h", opts)
-keymap("n", "<C-Down>", "<C-w>j", opts)
-keymap("n", "<C-Up>", "<C-w>k", opts)
-keymap("n", "<C-Right>", "<C-w>l", opts)
-
--- Resize splits with alt+cursor keys
-keymap("n", "<M-Up>", ":resize +2<CR>", opts)
-keymap("n", "<M-Down>", ":resize -2<CR>", opts)
-keymap("n", "<M-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<M-Right>", ":vertical resize +2<CR>", opts)
-
--------------------------------------------------------------------------------
--- Plugins
--------------------------------------------------------------------------------
+-- PLUGINS --
+-- Neotree
+keymap("n", "\\", ":Neotree filesystem left toggle<CR>", opts)
+keymap("n", "|", ":Neotree filesystem reveal left focus<CR>", opts)
 
 -- Telescope
-keymap("n", "<C-p>", "<cmd>Telescope find_files hidden=true<CR>", opts)
-
--- NvimTreeToggle
-keymap("n", "\\", "<cmd>NvimTreeToggle<CR>", opts)
-keymap("n", "|", "<cmd>NvimTreeFindFile<CR>", opts)
-
--- Trouble
-keymap("n", "gR", "<cmd>TroubleToggle lsp_references<CR>", opts)
+keymap("n", "<C-p>", ":Telescope find_files hidden=true<CR>", opts)
+keymap("n", "<leader>th", ":Telescope colorscheme<CR>", opts)
+keymap("n", "<leader>ff", ":lua vim.lsp.buf.format{async=true}<CR>", opts)
 
 -- Grepper
-keymap("n", "gs", "<plug>(GrepperOperator)", opts)
-
--- UFO
---[[ keymap("n", "zR", "<cmd>lua require('ufo').openAllFolds<cr>", opts) ]]
---[[ keymap("n", "zM", "<cmd>lua require('ufo').closeAllFolds<cr>", opts) ]]
+keymap("n", "<leader>gs", ":Grepper -query<CR>", opts)
 
 -- Github Copilot
 keymap("i", "<C-Right>", 'copilot#Accept("\\<CR>")', mergeTables(opts, { expr = true, replace_keycodes = false }))
 keymap("i", "<C-Left>", 'copilot#Cancel("\\<CR>")', mergeTables(opts, { expr = true, replace_keycodes = false }))
 keymap("i", "<A-Right>", "<Plug>(copilot-accept-word)", opts)
 vim.g.copilot_no_tab_map = true
+
+-- Bufferline
+keymap("n", "<tab>", ":BufferLineCycleNext<CR>", opts)
+keymap("n", "<S-tab>", ":BufferLineCyclePrev<CR>", opts)
