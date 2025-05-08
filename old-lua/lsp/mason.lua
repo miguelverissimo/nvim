@@ -1,6 +1,8 @@
 local servers = {
   "lua_ls",
   "solargraph",
+  "ruby_lsp",
+  "rubocop",
   "cssls",
   "jsonls",
   "yamlls",

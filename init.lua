@@ -4,9 +4,6 @@ require("config.lazy")
 
 -- Setup lazy.nvim
 require("lazy").setup({
-  install = {
-    
-  },
   spec = {
     -- import your plugins
     { import = "plugins" },
