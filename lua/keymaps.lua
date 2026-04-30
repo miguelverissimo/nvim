@@ -85,9 +85,6 @@ keymap("n", "<C-p>", ":Telescope find_files hidden=true<CR>", opts)
 keymap("n", "<leader>th", ":Telescope colorscheme<CR>", opts)
 keymap("n", "<leader>ff", ":lua vim.lsp.buf.format{async=true}<CR>", opts)
 
--- Grepper
-keymap("n", "<leader>gs", ":Grepper -query<CR>", opts)
-
 -- Github Copilot
 keymap("i", "<C-Right>", 'copilot#Accept("\\<CR>")', mergeTables(opts, { expr = true, replace_keycodes = false }))
 keymap("i", "<C-Left>", 'copilot#Cancel("\\<CR>")', mergeTables(opts, { expr = true, replace_keycodes = false }))
@@ -97,3 +94,13 @@ vim.g.copilot_no_tab_map = true
 -- Bufferline
 keymap("n", "<tab>", ":BufferLineCycleNext<CR>", opts)
 keymap("n", "<S-tab>", ":BufferLineCyclePrev<CR>", opts)
+
+-- Quickfix window: undo global <CR>/<Esc> overrides, add q/<Esc> to close
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "qf",
+  callback = function(ev)
+    vim.keymap.set("n", "<CR>", "<CR>", { buffer = ev.buf, remap = false, silent = true })
+    vim.keymap.set("n", "q", "<cmd>cclose<CR>", { buffer = ev.buf, silent = true })
+    vim.keymap.set("n", "<Esc>", "<cmd>cclose<CR>", { buffer = ev.buf, silent = true })
+  end,
+})

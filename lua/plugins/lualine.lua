@@ -22,7 +22,7 @@ return {
       sections = {
         lualine_a = { "mode" },
         lualine_b = { 'branch' },
-        lualine_c = { 'diff', require("lsp-status").status,
+        lualine_c = { 'diff', 'diagnostics',
           require('auto-session.lib').current_session_name },
         lualine_x = {
           {
