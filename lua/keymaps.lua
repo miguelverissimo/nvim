@@ -104,3 +104,9 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.keymap.set("n", "<Esc>", "<cmd>cclose<CR>", { buffer = ev.buf, silent = true })
   end,
 })
+
+-- Commenting (Comment.nvim provides <Plug> mappings; <C-/> covers terminals that send it literally, <C-_> covers the rest)
+vim.keymap.set("n", "<C-/>", "<Plug>(comment_toggle_linewise_current)", { silent = true, desc = "Toggle comment" })
+vim.keymap.set("x", "<C-/>", "<Plug>(comment_toggle_linewise_visual)", { silent = true, desc = "Toggle comment" })
+vim.keymap.set("n", "<C-_>", "<Plug>(comment_toggle_linewise_current)", { silent = true, desc = "Toggle comment" })
+vim.keymap.set("x", "<C-_>", "<Plug>(comment_toggle_linewise_visual)", { silent = true, desc = "Toggle comment" })
