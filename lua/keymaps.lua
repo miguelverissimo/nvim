@@ -86,10 +86,11 @@ keymap("n", "<leader>th", ":Telescope colorscheme<CR>", opts)
 keymap("n", "<leader>ff", ":lua vim.lsp.buf.format{async=true}<CR>", opts)
 
 -- Github Copilot
-keymap("i", "<C-Right>", 'copilot#Accept("\\<CR>")', mergeTables(opts, { expr = true, replace_keycodes = false }))
-keymap("i", "<C-Left>", 'copilot#Cancel("\\<CR>")', mergeTables(opts, { expr = true, replace_keycodes = false }))
-keymap("i", "<A-Right>", "<Plug>(copilot-accept-word)", opts)
 vim.g.copilot_no_tab_map = true
+keymap("i", "<Tab>", 'copilot#Accept("\\<Tab>")', mergeTables(opts, { expr = true, replace_keycodes = false }))
+keymap("i", "<C-l>", "<Plug>(copilot-accept-word)", { silent = true })
+keymap("i", "<C-j>", "<Plug>(copilot-accept-line)", { silent = true })
+keymap("i", "<C-]>", "<Plug>(copilot-dismiss)", { silent = true })
 
 -- Bufferline
 keymap("n", "<tab>", ":BufferLineCycleNext<CR>", opts)
