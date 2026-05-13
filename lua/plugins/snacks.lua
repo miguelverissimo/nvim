@@ -29,5 +29,12 @@ return {
       end,
       desc = "Explorer (cwd)",
     },
+    {
+      "<leader>sx",
+      function()
+        Snacks.picker.grep({ glob = { "!*_spec.rb" } })
+      end,
+      desc = "Grep (no specs)",
+    },
   },
 }
